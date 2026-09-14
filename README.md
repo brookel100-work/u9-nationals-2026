@@ -1,39 +1,19 @@
-# SA U9 Inline Nationals 2026 — Team Hub v6
+# SA U9 Inline Nationals 2026 — Team Hub v7
 
-Mobile-first PWA for the South Australia U9 Inline Hockey team at the 2026 Australian National Championships.
+Version 7 adds the requested team-manager dashboard refinements:
 
-## v6 changes
+- Restored a prominent dynamic **Countdown to Nationals** on Home.
+- Restored the official **SA U9 representative team roster artwork** on the Team page.
+- Rebuilt the Home **Quick Access** cards with consistent custom SVG icons instead of mixed emoji/text symbols.
+- Added a **Team Announcements** system with priority levels (Info / Reminder / Important), author and update date.
+- Added **Share to U9 Messenger**: on supported phones this opens the native share sheet; fallback copies the announcement and opens the U9 Messenger group.
+- Announcements automatically disappear from Home when none are marked active in `app-data.js`.
+- Kept the dynamic Schedule & Results, Facebook feed, HockeySyte, YouTube, Info links, checklist and external-link new-tab behaviour.
+- Cache bumped to **v7** to force the new interface/assets to deploy over older PWA versions.
 
-- New approved SA U9 Home hero artwork with Nationals branding, dates and venue
-- New Schedule & Results banner
-- New Nationals Checklist banner
-- Corrected embedded Nationals Facebook page: `61592878025737`
-- Quick Access simplified: Team and Checklist removed from Home shortcuts
-- Schedule renamed and rebuilt as **Schedule & Results**
-- Game results appear on the same fixture cards when scores are entered in `app-data.js`
-- Completed games without a score show an official HockeySyte result link
-- Restored important Info links
-- Added downloadable official 2026 Championship Rules PDF
-- Added downloadable full Nationals Draw v2.6 workbook
-- External links open in a new tab/window
-- U9 Messenger group remains available for team contact
-- Service worker cache bumped to v6 and remains network-first
-
-## Updating results
-
-Open `app-data.js` and add the official score to the relevant game, for example:
-
-```js
-homeScore: 3,
-awayScore: 2
-```
-
-The app automatically updates the game card plus SA's W-L-D record, Goals For and Goals Against.
-
-## Official results integration
-
-HockeySyte remains the official source. Automatic live syncing is not enabled yet because the 2026 Nationals public results endpoint has not been confirmed. Once the organisers update/publish the 2026 Nationals HockeySyte competition, the app is ready for that integration to be tested.
+## Updating announcements
+Edit the `announcements` array in `app-data.js`.
+Set `active: false` to hide an announcement without deleting it.
 
 ## Privacy
-
-Do not add private parent contacts, payment status, medical information or internal Team Manager notes to this public repository.
+Do not add private parent phone numbers, payment status, medical information, or internal Team Manager notes to this public GitHub repository.

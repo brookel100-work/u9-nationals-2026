@@ -19,6 +19,18 @@ window.APP_DATA = {
     championshipRulesUrl: "./docs/2026-skate-australia-national-championship-document.pdf",
     fullDrawUrl: "./docs/nationals-2026-draw-v2.6.xlsx"
   },
+
+  announcements: [
+    {
+      id: 1,
+      priority: "info",
+      title: "Nationals draw v2.6 is now live",
+      message: "The latest U9 schedule is now available in Schedule & Results. Please use the app for game times and team arrival times.",
+      author: "Brooke",
+      updated: "15 Sep 2026",
+      active: true
+    }
+  ],
   team: [
     { name: "Rowan Broderick", role: "Captain", badge: "C" },
     { name: "Odin Grantham", role: "Alternate", badge: "A" },
