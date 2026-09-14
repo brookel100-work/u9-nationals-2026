@@ -8,14 +8,16 @@ window.APP_DATA = {
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.6",
     lastUpdated: "14 September 2026",
-    facebookShareUrl: "https://www.facebook.com/share/1EF2bBLtjd/?mibextid=wwXIfr",
-    facebookCanonicalUrl: "https://www.facebook.com/inlinehockeyaustralia/",
+    facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
+    facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
     hockeySyteUrl: "https://ilha.hockeysyte.com/superseason/3",
     youtubeUrl: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw",
     revolutioniseUrl: "https://www.revolutionise.com.au/skate/events/359351",
     siaUrl: "https://elearning.sportintegrity.gov.au/",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118"
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118",
+    championshipRulesUrl: "./docs/2026-skate-australia-national-championship-document.pdf",
+    fullDrawUrl: "./docs/nationals-2026-draw-v2.6.xlsx"
   },
   team: [
     { name: "Rowan Broderick", role: "Captain", badge: "C" },
