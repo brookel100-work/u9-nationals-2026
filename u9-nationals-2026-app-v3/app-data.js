@@ -10,10 +10,7 @@ window.APP_DATA = {
     timezoneLabel: "Queensland time (AEST)",
     scheduleVersion: "v2.6",
     lastUpdated: "14 September 2026",
-    facebookShareUrl: "https://www.facebook.com/share/1EF2bBLtjd/?mibextid=wwXIfr",
-    messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
-    hockeySyteUrl: "https://ilha.hockeysyte.com/superseason/3?fbclid=IwY2xjawUUvzFwZG9mBWV4dG4DYWVtAjEwAHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR63ItbaPhBVdoess10aBDKBtJJJweplYQ189q2wMw0QAc5cj8IE4HzEA4C0CA_aem_ccOut3gUYgO4otEzse8PEQ",
-    youtubeUrl: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw"
+    facebookShareUrl: "https://www.facebook.com/share/1EF2bBLtjd/?mibextid=wwXIfr"
   },
 
   team: [
@@ -44,21 +41,19 @@ window.APP_DATA = {
     { dateLabel: "Sat 12 Sep", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" }
   ],
 
-  // Results are deliberately blank pre-tournament. Add homeScore/awayScore after a game
-  // and the app will automatically display the result and team record.
   schedule: [
-    { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
-    { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", home: "SA", away: "NSW", venue: "Skate Paradise", homeScore: null, awayScore: null },
-    { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
-    { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", homeScore: null, awayScore: null }
+    { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", match: "QLD vs SA", venue: "Skate Paradise" },
+    { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", match: "SA vs NSW", venue: "Skate Paradise" },
+    { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", match: "TAS vs SA", venue: "Skate Paradise" },
+    { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", match: "SA vs VIC", venue: "Skate Paradise" }
   ],
 
   finals: [
-    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "Play-in game if applicable based on round-robin standings", confirmed: false },
-    { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "Finals pathway", confirmed: false },
-    { id: 125, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "11:10", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs 4th", note: "Finals pathway", confirmed: false },
-    { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "Finals pathway", confirmed: false },
-    { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "Grand Final", confirmed: false }
+    { id: 113, dateLabel: "Fri 2 Oct", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "Play-in game if applicable based on round-robin standings" },
+    { id: 124, dateLabel: "Sat 3 Oct", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "Finals pathway" },
+    { id: 125, dateLabel: "Sat 3 Oct", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs 4th", note: "Finals pathway" },
+    { id: 131, dateLabel: "Sat 3 Oct", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "Finals pathway" },
+    { id: 138, dateLabel: "Sun 4 Oct", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "Grand Final" }
   ],
 
   checklist: [
@@ -74,10 +69,9 @@ window.APP_DATA = {
 
   links: [
     { icon: "f", title: "Official Nationals Facebook", description: "Australian Inline Hockey National Championships", url: "https://www.facebook.com/share/1EF2bBLtjd/?mibextid=wwXIfr", featured: true },
-    { icon: "▶", title: "Official Nationals YouTube", description: "Games, streams and Nationals video content", url: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw", featured: true },
-    { icon: "🏒", title: "HockeySyte", description: "Official game sheets, results and statistics", url: "https://ilha.hockeysyte.com/superseason/3?fbclid=IwY2xjawUUvzFwZG9mBWV4dG4DYWVtAjEwAHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR63ItbaPhBVdoess10aBDKBtJJJweplYQ189q2wMw0QAc5cj8IE4HzEA4C0CA_aem_ccOut3gUYgO4otEzse8PEQ" },
     { icon: "SIA", title: "Sport Integrity Australia eLearning", description: "Integrity Training / Clean Sport 101", url: "https://elearning.sportintegrity.gov.au/" },
     { icon: "✓", title: "Revolutionise Nationals Registration", description: "South Australia state team registration", url: "https://www.revolutionise.com.au/skate/events/359351" },
+    { icon: "🏒", title: "HockeySyte", description: "Official game sheets, results and statistics", url: "https://ilha.hockeysyte.com/" },
     { icon: "SA", title: "SA Inline Hockey Club", description: "SAILHC Facebook page", url: "https://www.facebook.com/share/1Cq6XQueDL/?mibextid=wwXIfr" },
     { icon: "⌖", title: "Skate Paradise", description: "34–38 Johnson Road, Hillcrest QLD 4118", url: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118" }
   ],
