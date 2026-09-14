@@ -1,21 +1,22 @@
 window.APP_DATA = {
   meta: {
     appName: "SA U9 Nationals 2026",
-    shortName: "SA U9 Nationals",
     subtitle: "South Australia U9 · Australian Inline Hockey National Championships",
-    location: "Skate Paradise · Hillcrest, Queensland",
+    venue: "Skate Paradise",
     address: "34–38 Johnson Road, Hillcrest QLD 4118",
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
-    timezoneLabel: "Queensland time (AEST)",
     scheduleVersion: "v2.6",
     lastUpdated: "14 September 2026",
     facebookShareUrl: "https://www.facebook.com/share/1EF2bBLtjd/?mibextid=wwXIfr",
+    facebookCanonicalUrl: "https://www.facebook.com/inlinehockeyaustralia/",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
-    hockeySyteUrl: "https://ilha.hockeysyte.com/superseason/3?fbclid=IwY2xjawUUvzFwZG9mBWV4dG4DYWVtAjEwAHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR63ItbaPhBVdoess10aBDKBtJJJweplYQ189q2wMw0QAc5cj8IE4HzEA4C0CA_aem_ccOut3gUYgO4otEzse8PEQ",
-    youtubeUrl: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw"
+    hockeySyteUrl: "https://ilha.hockeysyte.com/superseason/3",
+    youtubeUrl: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw",
+    revolutioniseUrl: "https://www.revolutionise.com.au/skate/events/359351",
+    siaUrl: "https://elearning.sportintegrity.gov.au/",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118"
   },
-
   team: [
     { name: "Rowan Broderick", role: "Captain", badge: "C" },
     { name: "Odin Grantham", role: "Alternate", badge: "A" },
@@ -26,70 +27,42 @@ window.APP_DATA = {
     { name: "Harrison Kelleher", role: "Player" },
     { name: "Beau Mumford", role: "Player" },
     { name: "Jasiah Mumford", role: "Player" },
-    { name: "Rylee Ruwette", role: "Player" },
+    { name: "Riley Ruwette", role: "Player" },
     { name: "TJ Lodge", role: "Goalkeeper", badge: "G" }
   ],
-
   staff: [
     { name: "Rohan Grantham", role: "Coach" },
     { name: "Brooke Lodge", role: "Team Manager" }
   ],
-
   training: [
-    { dateLabel: "Sat 4 Jul", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" },
-    { dateLabel: "Sat 11 Jul", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" },
-    { dateLabel: "Sat 25 Jul", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" },
-    { dateLabel: "Sat 8 Aug", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" },
-    { dateLabel: "Sat 29 Aug", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" },
-    { dateLabel: "Sat 12 Sep", timeLabel: "1:15–2:30pm", group: "9s + 11s + 13s" }
+    { dateLabel: "Sat 4 Jul", timeLabel: "1:15–2:30pm" },
+    { dateLabel: "Sat 11 Jul", timeLabel: "1:15–2:30pm" },
+    { dateLabel: "Sat 25 Jul", timeLabel: "1:15–2:30pm" },
+    { dateLabel: "Sat 8 Aug", timeLabel: "1:15–2:30pm" },
+    { dateLabel: "Sat 29 Aug", timeLabel: "1:15–2:30pm" },
+    { dateLabel: "Sat 12 Sep", timeLabel: "1:15–2:30pm" }
   ],
-
-  // Results are deliberately blank pre-tournament. Add homeScore/awayScore after a game
-  // and the app will automatically display the result and team record.
   schedule: [
     { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
     { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", home: "SA", away: "NSW", venue: "Skate Paradise", homeScore: null, awayScore: null },
     { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
     { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", homeScore: null, awayScore: null }
   ],
-
   finals: [
-    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "Play-in game if applicable based on round-robin standings", confirmed: false },
+    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "Play-in game if applicable", confirmed: false },
     { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "Finals pathway", confirmed: false },
     { id: 125, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "11:10", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs 4th", note: "Finals pathway", confirmed: false },
     { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "Finals pathway", confirmed: false },
     { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "Grand Final", confirmed: false }
   ],
-
   checklist: [
-    { title: "SA registration", detail: "Make sure the player's SA registration is complete." },
-    { title: "Revolutionise Nationals registration", detail: "Nationals registration must be completed through Revolutionise." },
-    { title: "Integrity Training", detail: "U9 players: Clean Sport 101 is the recommended SIA course with parent/guardian assistance. Send the completion certificate to Brooke." },
-    { title: "Nationals fees", detail: "Make sure any outstanding SAILHC Nationals invoices are up to date." },
-    { title: "Uniform", detail: "Bring the official State playing uniform; it must be clean and in good repair." },
+    { title: "SA registration", detail: "Player SA registration complete." },
+    { title: "Revolutionise Nationals registration", detail: "Nationals registration completed through Revolutionise." },
+    { title: "Integrity Training", detail: "U9 players: Clean Sport 101 with parent/guardian assistance; certificate sent to Brooke." },
+    { title: "Nationals fees", detail: "Any outstanding SAILHC Nationals invoices up to date." },
+    { title: "Uniform", detail: "Official State playing uniform packed, clean and in good repair." },
     { title: "White stick tape", detail: "Only white tape is permitted on stick blades at Nationals." },
-    { title: "Arrive one hour before games", detail: "Players should be at the venue at least one hour before their scheduled game." },
-    { title: "Proof of age", detail: "Families should be able to provide an original birth certificate or passport if the Championship Director requests proof of age." }
-  ],
-
-  links: [
-    { icon: "f", title: "Official Nationals Facebook", description: "Australian Inline Hockey National Championships", url: "https://www.facebook.com/share/1EF2bBLtjd/?mibextid=wwXIfr", featured: true },
-    { icon: "▶", title: "Official Nationals YouTube", description: "Games, streams and Nationals video content", url: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw", featured: true },
-    { icon: "🏒", title: "HockeySyte", description: "Official game sheets, results and statistics", url: "https://ilha.hockeysyte.com/superseason/3?fbclid=IwY2xjawUUvzFwZG9mBWV4dG4DYWVtAjEwAHNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR63ItbaPhBVdoess10aBDKBtJJJweplYQ189q2wMw0QAc5cj8IE4HzEA4C0CA_aem_ccOut3gUYgO4otEzse8PEQ" },
-    { icon: "SIA", title: "Sport Integrity Australia eLearning", description: "Integrity Training / Clean Sport 101", url: "https://elearning.sportintegrity.gov.au/" },
-    { icon: "✓", title: "Revolutionise Nationals Registration", description: "South Australia state team registration", url: "https://www.revolutionise.com.au/skate/events/359351" },
-    { icon: "SA", title: "SA Inline Hockey Club", description: "SAILHC Facebook page", url: "https://www.facebook.com/share/1Cq6XQueDL/?mibextid=wwXIfr" },
-    { icon: "⌖", title: "Skate Paradise", description: "34–38 Johnson Road, Hillcrest QLD 4118", url: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118" }
-  ],
-
-  rules: [
-    "Game times in the app are Queensland time (AEST).",
-    "Players should be at the venue at least one hour before their scheduled event.",
-    "Teams must be ready to take the playing surface 15 minutes before the scheduled game time.",
-    "Only official playing uniforms may be worn during warm-ups.",
-    "Only white tape is permitted on stick blades.",
-    "Sticks and pucks may only be used on the playing surface.",
-    "Finals and the play-in game depend on round-robin standings.",
-    "Presentations are scheduled 30 minutes after each Grand Final for Bronze, Silver and Gold medal teams."
+    { title: "Arrive one hour before games", detail: "Players should be at the venue at least one hour before each scheduled game." },
+    { title: "Proof of age", detail: "Have access to an original birth certificate or passport if requested." }
   ]
 };

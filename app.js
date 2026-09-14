@@ -1,175 +1,21 @@
-const data = window.APP_DATA;
-const app = document.getElementById('app');
-const navButtons = [...document.querySelectorAll('.nav-item')];
-let deferredInstallPrompt = null;
-
-const esc = (s = '') => String(s)
-  .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-  .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
-
-function qldDate(date, time = '00:00') { return new Date(`${date}T${time}:00+10:00`); }
-function gameEnd(g) { return new Date(qldDate(g.date, g.time).getTime() + 90 * 60000); }
-function hasResult(g) { return Number.isFinite(g.homeScore) && Number.isFinite(g.awayScore); }
-function matchLabel(g) { return g.home && g.away ? `${g.home} vs ${g.away}` : g.match; }
-function resultLabel(g) { return hasResult(g) ? `${g.home} ${g.homeScore} – ${g.awayScore} ${g.away}` : ''; }
-function countdownText() {
-  const now = new Date();
-  const start = new Date(data.meta.nationalsStart);
-  const diff = start - now;
-  if (diff <= 0) {
-    const end = new Date(data.meta.nationalsEnd);
-    if (now <= end) return 'Nationals are underway!';
-    return 'Nationals complete';
-  }
-  const days = Math.ceil(diff / 86400000);
-  return `${days} day${days === 1 ? '' : 's'} to Nationals`;
-}
-function getRoundRobinState() {
-  const now = new Date();
-  const enriched = data.schedule.map(g => ({...g, when: qldDate(g.date, g.time), end: gameEnd(g)})).sort((a,b) => a.when - b.when);
-  return {
-    upcoming: enriched.filter(g => g.end >= now),
-    past: enriched.filter(g => g.end < now),
-    next: enriched.find(g => g.end >= now) || null
-  };
-}
-function getConfirmedFinal() {
-  const now = new Date();
-  return data.finals
-    .filter(g => g.confirmed)
-    .map(g => ({...g, when:qldDate(g.date,g.time), end:gameEnd(g)}))
-    .filter(g => g.end >= now)
-    .sort((a,b)=>a.when-b.when)[0] || null;
-}
-function getNextRelevantEvent() {
-  const rr = getRoundRobinState();
-  if (rr.next) return {...rr.next, type:'round-robin'};
-  const final = getConfirmedFinal();
-  if (final) return {...final, type:'final'};
-  return null;
-}
-function teamRecord() {
-  let w=0,l=0,d=0,gf=0,ga=0;
-  data.schedule.filter(hasResult).forEach(g => {
-    const saHome = g.home === 'SA';
-    const sa = saHome ? g.homeScore : g.awayScore;
-    const opp = saHome ? g.awayScore : g.homeScore;
-    gf += sa; ga += opp;
-    if (sa > opp) w++; else if (sa < opp) l++; else d++;
-  });
-  return {w,l,d,gf,ga,played:w+l+d};
-}
-function sectionTitle(title, aside = '') {
-  return `<div class="section-title"><h2>${esc(title)}</h2>${aside ? `<small>${esc(aside)}</small>` : ''}</div>`;
-}
-function nextGameCard(game) {
-  if (!game) {
-    return `<div class="card empty"><strong>Round robin complete.</strong><p>Finals timing will appear here once SA's pathway is confirmed.</p></div>`;
-  }
-  const label = matchLabel(game);
-  return `<article class="card next-game">
-    <div class="game-kicker">NEXT U9 ${game.type === 'final' ? 'FINALS' : 'GAME'} · GAME ${esc(game.id)}</div>
-    <div class="match-row"><div><h3>${esc(label)}</h3><p>${esc(game.dateLabel)} · ${esc(game.venue || 'Skate Paradise')}</p></div>
-      <div class="match-time"><strong>${esc(game.timeLabel)}</strong><span>game time</span></div></div>
-    <div class="match-meta"><span class="pill gold">Arrive ${esc(game.arrivalLabel)}</span><span class="pill">AEST</span></div>
-  </article>`;
-}
-function facebookFeedBlock() {
-  const href = encodeURIComponent(data.meta.facebookShareUrl);
-  const plugin = `https://www.facebook.com/plugins/page.php?href=${href}&tabs=timeline&width=500&height=640&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`;
-  return `<article class="card facebook-feed-card">
-    <div class="facebook-title"><div class="fb-mark">f</div><div><strong>Official Nationals Updates</strong><span>Australian Inline Hockey National Championships</span></div></div>
-    <div class="facebook-frame-wrap">
-      <iframe class="facebook-frame" title="Official Nationals Facebook updates" src="${plugin}" width="500" height="640" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    </div>
-    <div class="feed-fallback"><span>If Facebook does not display the feed on your device:</span><a href="${esc(data.meta.facebookShareUrl)}" target="_blank" rel="noopener noreferrer">Open official Facebook page</a></div>
-  </article>`;
-}
-function helpCard() {
-  return `<article class="card help-card"><div class="help-icon">?</div><div class="help-copy"><strong>Need help?</strong><p>Contact Brooke (Team Manager) or Rohan (Coach), or jump into the U9 Messenger group.</p><a href="${esc(data.meta.messengerGroupUrl)}" target="_blank" rel="noopener noreferrer">Open U9 Messenger group</a></div></article>`;
-}
-function mediaCard() {
-  return `<div class="media-grid">
-    <a class="card media-card youtube" href="${esc(data.meta.youtubeUrl)}" target="_blank" rel="noopener noreferrer"><span class="media-icon">▶</span><div><strong>Nationals YouTube</strong><small>Games, streams & video</small></div></a>
-    <a class="card media-card stats" href="${esc(data.meta.hockeySyteUrl)}" target="_blank" rel="noopener noreferrer"><span class="media-icon">🏒</span><div><strong>HockeySyte</strong><small>Results & statistics</small></div></a>
-  </div>`;
-}
-function renderHome() {
-  const next = getNextRelevantEvent();
-  const record = teamRecord();
-  return `<section class="sa-hero">
-      <img src="./assets/sa-u9-training-art.png" alt="South Australia U9 team artwork" class="hero-art" />
-      <div class="hero-overlay"></div>
-      <div class="hero-content"><div class="eyebrow">UNDER 9 · SOUTH AUSTRALIA</div><h1>Nationals 2026</h1>
-      <p>27 September – 4 October · Queensland</p><div class="countdown">${esc(countdownText())}</div></div>
-    </section>
-    ${record.played ? `<div class="record-strip"><div><strong>${record.w}-${record.l}${record.d ? `-${record.d}` : ''}</strong><span>SA record</span></div><div><strong>${record.gf}</strong><span>Goals for</span></div><div><strong>${record.ga}</strong><span>Goals against</span></div></div>` : ''}
-    ${sectionTitle('Next game', data.meta.scheduleVersion)}${nextGameCard(next)}
-    ${sectionTitle('Official channels')}${mediaCard()}
-    ${sectionTitle('Official Nationals feed')}${facebookFeedBlock()}
-    ${sectionTitle('Team contact')}${helpCard()}
-    <p class="source-note">Schedule: Nationals Draw ${esc(data.meta.scheduleVersion)} · Updated ${esc(data.meta.lastUpdated)}</p>`;
-}
-function renderTeam() {
-  return `<section class="team-banner"><div class="team-banner-copy"><div class="eyebrow">SOUTH AUSTRALIA</div><h1>SA U9 Team</h1><p>Play · Represent · Belong</p></div></section>
-    <article class="image-card roster-card"><img src="./assets/u9-roster.jpeg" alt="Official South Australia U9 representative team roster" /></article>
-    ${sectionTitle('Players')}
-    <div class="team-grid">${data.team.map(p => `<article class="card person"><div class="avatar">${esc(p.badge || p.name.split(' ').map(x => x[0]).slice(0,2).join(''))}</div><div class="person-copy"><strong>${esc(p.name)}</strong><small>${esc(p.role)}</small></div>${p.badge ? `<span class="role-badge">${esc(p.badge)}</span>` : ''}</article>`).join('')}</div>
-    ${sectionTitle('Team staff')}
-    <div class="team-grid">${data.staff.map(p => `<article class="card person"><div class="avatar staff">${esc(p.name.split(' ').map(x => x[0]).slice(0,2).join(''))}</div><div class="person-copy"><strong>${esc(p.name)}</strong><small>${esc(p.role)}</small></div></article>`).join('')}</div>
-    ${sectionTitle('Need help?')}${helpCard()}`;
-}
-function gameCard(g, conditional = false) {
-  const result = hasResult(g);
-  const end = g.date && g.time ? gameEnd(g) : null;
-  const now = new Date();
-  const status = result ? 'FINAL' : (end && end < now ? 'AWAITING RESULT' : 'UPCOMING');
-  return `<article class="card schedule-card ${conditional ? 'conditional' : ''} ${result ? 'has-result' : ''}"><div class="schedule-top"><div class="schedule-date">${esc(g.dateLabel)}</div><div class="schedule-id">Game ${esc(g.id)} · ${status}</div></div>
-    <div class="schedule-match">${esc(result ? resultLabel(g) : matchLabel(g))}</div><div class="schedule-details"><div class="schedule-detail"><span>Game</span><strong>${esc(g.timeLabel)}</strong></div><div class="schedule-detail"><span>Team arrival</span><strong>${esc(g.arrivalLabel)}</strong></div></div>${g.note ? `<div class="notice">${esc(g.note)}</div>` : ''}</article>`;
-}
-function resultsSummary() {
-  const record = teamRecord();
-  if (!record.played) return `<article class="card results-empty"><strong>Results & stats</strong><p>Game results will appear here during Nationals. HockeySyte remains the official source.</p><a class="secondary-link" href="${esc(data.meta.hockeySyteUrl)}" target="_blank" rel="noopener noreferrer">Open HockeySyte</a></article>`;
-  return `<article class="card results-summary"><div><strong>${record.w}-${record.l}${record.d ? `-${record.d}` : ''}</strong><span>Record</span></div><div><strong>${record.gf}</strong><span>GF</span></div><div><strong>${record.ga}</strong><span>GA</span></div><a href="${esc(data.meta.hockeySyteUrl)}" target="_blank" rel="noopener noreferrer">Official stats ›</a></article>`;
-}
-function renderSchedule() {
-  const rr = getRoundRobinState();
-  return `<div class="page-hero compact"><div><div class="eyebrow">QUEENSLAND · AEST</div><h1>U9 Schedule</h1><p>The app automatically moves games from upcoming to past as Nationals progresses.</p></div></div>
-    ${sectionTitle('Results & stats')}${resultsSummary()}
-    ${rr.upcoming.length ? `${sectionTitle('Upcoming round robin')}${rr.upcoming.map(g => gameCard(g)).join('')}` : ''}
-    ${rr.past.length ? `${sectionTitle('Past round robin')}${rr.past.map(g => gameCard(g)).join('')}` : ''}
-    ${sectionTitle('Play-in & finals', 'depends on standings')}${data.finals.map(g => gameCard(g, true)).join('')}
-    <details class="training-details"><summary>Completed SA Nationals training <span>${data.training.length} sessions</span></summary><div class="training-body">${data.training.map(t => `<div class="training-row"><div><strong>${esc(t.dateLabel)}</strong><span>${esc(t.group)}</span></div><div class="training-time">${esc(t.timeLabel)} <b>✓</b></div></div>`).join('')}</div></details>
-    <p class="source-note">Change-room allocations are not shown because the supplied v2.6 change-room sheet was blank.</p>`;
-}
-function renderChecklist() {
-  return `<div class="page-hero compact"><div><div class="eyebrow">READY TO GO</div><h1>Nationals Checklist</h1><p>Quick family reference before Queensland.</p></div></div>
-    ${data.checklist.map(item => `<article class="card check-item"><div class="check-icon">✓</div><div><h3>${esc(item.title)}</h3><p>${esc(item.detail)}</p></div></article>`).join('')}`;
-}
-function renderInfo() {
-  return `<section class="event-banner"><div class="event-banner-copy"><div class="eyebrow">AUSTRALIAN INLINE HOCKEY</div><h1>2026 National Championships</h1><p>27 September – 4 October · Skate Paradise, Queensland</p></div></section>
-    <article class="image-card poster"><img src="./assets/nationals-poster-full.png" alt="Official 2026 Australian Inline Hockey National Championships poster" /></article>
-    ${sectionTitle('Team contact')}${helpCard()}
-    ${sectionTitle('Official channels')}${mediaCard()}
-    ${sectionTitle('Useful links')}${data.links.map(l => `<a class="card link-card ${l.featured ? 'featured-link' : ''}" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer"><div class="link-icon">${esc(l.icon)}</div><div class="link-copy"><strong>${esc(l.title)}</strong><span>${esc(l.description)}</span></div><div class="chevron">›</div></a>`).join('')}
-    ${sectionTitle('Venue')}<article class="card venue-card"><strong>Skate Paradise</strong><p>${esc(data.meta.address)}</p><a class="secondary-link" href="https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118" target="_blank" rel="noopener noreferrer">Open in Maps</a></article>
-    ${sectionTitle('Quick Nationals rules')}<article class="card"><ul class="rule-list">${data.rules.map(r => `<li>${esc(r)}</li>`).join('')}</ul></article>`;
-}
-const views = { home: renderHome, schedule: renderSchedule, team: renderTeam, checklist: renderChecklist, info: renderInfo };
-function showView(view, pushHash = true) {
-  const currentView = views[view] ? view : 'home';
-  app.innerHTML = views[currentView]();
-  navButtons.forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
-  if (pushHash) history.replaceState(null, '', `#${currentView}`);
-  window.scrollTo({ top: 0, behavior: 'instant' });
-  app.focus({ preventScroll: true });
-}
-navButtons.forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
-window.addEventListener('hashchange', () => showView(location.hash.slice(1) || 'home', false));
-showView(location.hash.slice(1) || 'home', false);
-window.addEventListener('beforeinstallprompt', (event) => {
-  event.preventDefault(); deferredInstallPrompt = event;
-  const btn = document.getElementById('installBtn'); btn.hidden = false;
-  btn.addEventListener('click', async () => { btn.hidden = true; deferredInstallPrompt.prompt(); await deferredInstallPrompt.userChoice; deferredInstallPrompt = null; }, { once: true });
-});
-if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+const d=window.APP_DATA, app=document.getElementById('app'), nav=[...document.querySelectorAll('.nav-item')];
+const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+const qld=(date,time='00:00')=>new Date(`${date}T${time}:00+10:00`);
+const ended=g=>new Date(qld(g.date,g.time).getTime()+90*60000)<new Date();
+const hasResult=g=>Number.isFinite(g.homeScore)&&Number.isFinite(g.awayScore);
+function countdown(){const now=new Date(),s=new Date(d.meta.nationalsStart),e=new Date(d.meta.nationalsEnd);if(now<s){const days=Math.ceil((s-now)/86400000);return `${days} day${days===1?'':'s'} to Nationals`}if(now<=e)return'Nationals are underway!';return'Nationals complete'}
+function nextGame(){return d.schedule.map(g=>({...g,when:qld(g.date,g.time)})).sort((a,b)=>a.when-b.when).find(g=>!ended(g))||d.finals.filter(f=>f.confirmed).map(g=>({...g,when:qld(g.date,g.time)})).sort((a,b)=>a.when-b.when).find(g=>!ended(g))||null}
+function record(){let w=0,l=0,dr=0,gf=0,ga=0;d.schedule.filter(hasResult).forEach(g=>{const sa=g.home==='SA'?g.homeScore:g.awayScore,op=g.home==='SA'?g.awayScore:g.homeScore;gf+=sa;ga+=op;if(sa>op)w++;else if(sa<op)l++;else dr++});return{w,l,dr,gf,ga}}
+function title(t,a=''){return `<div class="section-title"><h2>${esc(t)}</h2>${a?`<small>${esc(a)}</small>`:''}</div>`}
+function nextCard(g){if(!g)return `<div class="card"><b>No upcoming game locked in yet.</b><div class="notice">Finals depend on round-robin standings.</div></div>`;const match=g.home&&g.away?`${g.home} vs ${g.away}`:g.match;return `<div class="card next-game"><div class="kicker">NEXT GAME</div><div class="game-line"><div><h3>${esc(match)}</h3><small>${esc(g.dateLabel)} · Game ${esc(g.id)}</small></div><div class="game-time"><strong>${esc(g.timeLabel)}</strong><span>Queensland time</span></div></div><div class="meta-pills"><span class="pill gold">Arrive ${esc(g.arrivalLabel)}</span><span class="pill">${esc(g.venue||d.meta.venue)}</span></div></div>`}
+function home(){const g=nextGame(),r=record();return `<img class="hero-img" src="./assets/sa-u9-home-hero.png" alt="SA U9 Nationals 2026"><div class="countdown"><div class="countdown-card"><strong>${esc(countdown())}</strong><small>27 September – 4 October 2026</small></div><div class="status-chip">SA U9</div></div>${nextCard(g)}${title('Quick Access')}<div class="quick-grid"><button class="quick" data-go="schedule"><span class="ico">▣</span><b>Schedule</b></button><button class="quick" data-go="team"><span class="ico">●●</span><b>Team</b></button><button class="quick" data-go="checklist"><span class="ico">✓</span><b>Checklist</b></button><a class="quick" href="${d.meta.messengerGroupUrl}" target="_blank"><span class="ico">💬</span><b>U9 Chat</b></a><a class="quick" href="${d.meta.hockeySyteUrl}" target="_blank"><span class="ico">🏒</span><b>Results</b></a><a class="quick" href="${d.meta.youtubeUrl}" target="_blank"><span class="ico">▶</span><b>YouTube</b></a></div>${title('Official Nationals Feed')}<div class="card facebook-card"><div class="facebook-head"><div class="fb-logo">f</div><div><b>Inline Hockey Australia</b><small>Official Nationals / ILHA updates</small></div></div><iframe class="facebook-frame" loading="lazy" title="Official Nationals Facebook feed" src="https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(d.meta.facebookCanonicalUrl)}&tabs=timeline&width=500&height=520&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false"></iframe><div class="fallback"><span>If Facebook blocks the embedded feed, use the official page directly.</span><a href="${d.meta.facebookShareUrl}" target="_blank">Open Facebook</a></div></div>${title('Results & Stats','ready for Nationals')}<div class="card"><div class="stats"><div><strong>${r.w}-${r.l}-${r.dr}</strong><span>W-L-D</span></div><div><strong>${r.gf}</strong><span>Goals For</span></div><div><strong>${r.ga}</strong><span>Goals Against</span></div></div><div class="sep"></div><div class="official-links"><a href="${d.meta.hockeySyteUrl}" target="_blank"><b>HockeySyte</b><small>Official results & stats</small></a><a href="${d.meta.youtubeUrl}" target="_blank"><b>YouTube</b><small>Streams & game video</small></a></div></div>${title('Need help?')}<div class="card help"><h3>Brooke (Team Manager) or Rohan (Coach)</h3><p>For U9 team questions, use our Messenger group so the right person can help quickly.</p><div class="help-actions"><a href="${d.meta.messengerGroupUrl}" target="_blank">Open U9 Messenger Chat</a></div></div><div class="footer-note">Schedule ${d.meta.scheduleVersion} · Last updated ${d.meta.lastUpdated}</div>`}
+function team(){return `<img class="header-img" src="./assets/sa-u9-team-header.png" alt="SA U9 Team">${title('Players & Staff')} ${d.team.map(p=>`<div class="card person"><div class="avatar">${esc(p.badge||p.name[0])}</div><div class="person-copy"><strong>${esc(p.name)}</strong><small>${esc(p.role)}</small></div>${p.badge?`<div class="badge">${esc(p.badge)}</div>`:''}</div>`).join('')}${title('Team Staff')}${d.staff.map(p=>`<div class="card person"><div class="avatar staff">${esc(p.name[0])}</div><div class="person-copy"><strong>${esc(p.name)}</strong><small>${esc(p.role)}</small></div></div>`).join('')}`}
+function scheduleCard(g,cond=false){const match=g.home&&g.away?`${g.home} vs ${g.away}`:g.match;const result=hasResult(g)?`<div class="notice">Final: ${g.home} ${g.homeScore} – ${g.awayScore} ${g.away}</div>`:'';return `<div class="card schedule-card"><div class="top"><div class="date">${esc(g.dateLabel)}</div><div class="fixture">Game ${esc(g.id)}</div></div><h3>${esc(match)}</h3><div class="schedule-details"><div class="detail"><span>Game</span><strong>${esc(g.timeLabel)}</strong></div><div class="detail"><span>Team arrival</span><strong>${esc(g.arrivalLabel)}</strong></div></div>${result}${cond?`<div class="notice">${esc(g.note)}</div>`:''}</div>`}
+function schedule(){const upcoming=d.schedule.filter(g=>!ended(g)),past=d.schedule.filter(g=>ended(g));return `${title('Schedule',d.meta.scheduleVersion)}${upcoming.length?upcoming.map(g=>scheduleCard(g)).join(''):`<div class="card">Round-robin games complete.</div>`}${past.length?`${title('Past Games')}${past.map(g=>scheduleCard(g)).join('')}`:''}${title('Finals Pathway')} ${d.finals.map(g=>scheduleCard(g,true)).join('')}<details class="training-details"><summary>Completed Nationals Training</summary>${d.training.map(t=>`<div class="training-row"><span>${esc(t.dateLabel)}</span><b>${esc(t.timeLabel)}</b></div>`).join('')}</details>`}
+function checklist(){return `${title('Nationals Checklist')} ${d.checklist.map((c,i)=>`<div class="card check"><div class="checkmark">${i+1}</div><div><h3>${esc(c.title)}</h3><p>${esc(c.detail)}</p></div></div>`).join('')}`}
+function info(){return `<img class="header-img" src="./assets/nationals-2026-header.png" alt="2026 National Championships">${title('Venue')}<div class="card"><b>${d.meta.venue}</b><p>${d.meta.address}</p><a class="button-link" href="${d.meta.mapsUrl}" target="_blank">Open in Maps</a></div>${title('Official Links')}<a class="card link-card" href="${d.meta.facebookShareUrl}" target="_blank"><div class="link-icon">f</div><div><b>Official Nationals Facebook</b><small>News and event updates</small></div><div class="chev">›</div></a><a class="card link-card" href="${d.meta.youtubeUrl}" target="_blank"><div class="link-icon">▶</div><div><b>Nationals YouTube</b><small>Streams and game videos</small></div><div class="chev">›</div></a><a class="card link-card" href="${d.meta.hockeySyteUrl}" target="_blank"><div class="link-icon">🏒</div><div><b>HockeySyte</b><small>Official game sheets, results and stats</small></div><div class="chev">›</div></a><a class="card link-card" href="${d.meta.revolutioniseUrl}" target="_blank"><div class="link-icon">✓</div><div><b>Revolutionise Registration</b><small>Nationals registration</small></div><div class="chev">›</div></a><a class="card link-card" href="${d.meta.siaUrl}" target="_blank"><div class="link-icon">SIA</div><div><b>Sport Integrity Australia</b><small>eLearning / Clean Sport 101</small></div><div class="chev">›</div></a>${title('Need help?')}<div class="card help"><h3>Brooke (Team Manager) or Rohan (Coach)</h3><p>Use the U9 Messenger group for team questions.</p><div class="help-actions"><a href="${d.meta.messengerGroupUrl}" target="_blank">Open U9 Messenger Chat</a></div></div>${title('Quick Nationals Rules')}<ul class="card rules"><li>Game times shown are Queensland time (AEST).</li><li>Players should be at the venue at least one hour before each scheduled game.</li><li>Teams must be ready 15 minutes before game time.</li><li>Only white tape is permitted on stick blades.</li><li>Finals depend on round-robin standings.</li></ul>`}
+const pages={home,schedule,team,checklist,info};
+function render(page='home'){app.innerHTML=pages[page]();nav.forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.querySelectorAll('[data-go]').forEach(el=>el.onclick=()=>render(el.dataset.go));window.scrollTo({top:0,behavior:'instant'})}
+nav.forEach(b=>b.addEventListener('click',()=>render(b.dataset.page)));
+render('home');
+if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js?v=5').catch(()=>{});}
