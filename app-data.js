@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.6",
-    lastUpdated: "14 September 2026",
+    lastUpdated: "16 September 2026",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
@@ -17,18 +17,24 @@ window.APP_DATA = {
     siaUrl: "https://elearning.sportintegrity.gov.au/",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118",
     championshipRulesUrl: "./docs/2026-skate-australia-national-championship-document.pdf",
-    fullDrawUrl: "./docs/nationals-2026-draw-v2.6.xlsx"
+    fullDrawUrl: "./docs/nationals-2026-draw-v2.6.xlsx",
+    teamUploadsUrl: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing",
+    teamSpreadsheetUrl: "https://docs.google.com/spreadsheets/d/1zSafcqouwXUKEbO2DvjxHqYdp9uXnGW-3wv9OUbmY8E/edit?usp=sharing"
   },
 
   announcements: [
     {
-      id: 1,
-      priority: "info",
-      title: "Nationals draw v2.6 is now live",
-      message: "The latest U9 schedule is now available in Schedule & Results. Please use the app for game times and team arrival times.",
+      id: 2,
+      priority: "important",
+      title: "Final Nationals Actions",
+      message: "Medical Forms: you should have received an email with your child’s form. Please complete it and upload it to the U9 document folder. SIA Training: all required modules must be completed by 11:59pm Sunday 20 September; upload the completed certificate to the same folder. Then update the U9 Team Information & Checklist spreadsheet, tick off both uploads and complete any missing details. If the Treasurer has contacted you about an outstanding balance, please finalise payment or contact them to arrange a payment plan. The wine raffle is drawn this Saturday, so all outstanding ticket books and money need to be returned before the draw.",
       author: "Brooke",
-      updated: "15 Sep 2026",
-      active: true
+      updated: "16 Sep 2026",
+      active: true,
+      actions: [
+        { label: "Upload Medical Form / SIA Certificate", url: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing" },
+        { label: "Update U9 Team Checklist", url: "https://docs.google.com/spreadsheets/d/1zSafcqouwXUKEbO2DvjxHqYdp9uXnGW-3wv9OUbmY8E/edit?usp=sharing" }
+      ]
     }
   ],
   team: [
@@ -72,8 +78,10 @@ window.APP_DATA = {
   checklist: [
     { title: "SA registration", detail: "Player SA registration complete." },
     { title: "Revolutionise Nationals registration", detail: "Nationals registration completed through Revolutionise." },
-    { title: "Integrity Training", detail: "U9 players: Clean Sport 101 with parent/guardian assistance; certificate sent to Brooke." },
-    { title: "Nationals fees", detail: "Any outstanding SAILHC Nationals invoices up to date." },
+    { title: "Medical Form", detail: "Complete the medical form emailed to your family and upload it to the U9 document folder before the first game." },
+    { title: "Sports Integrity Australia Training", detail: "Complete all required SIA modules by 11:59pm Sunday 20 September and upload the certificate to the U9 document folder." },
+    { title: "U9 Team Information & Checklist", detail: "Tick off your Medical Form and SIA Certificate uploads and complete any missing player details in the team spreadsheet." },
+    { title: "Nationals fees", detail: "If contacted by the Treasurer about an outstanding balance, finalise payment or contact them to arrange a payment plan." },
     { title: "Uniform", detail: "Official State playing uniform packed, clean and in good repair." },
     { title: "White stick tape", detail: "Only white tape is permitted on stick blades at Nationals." },
     { title: "Arrive one hour before games", detail: "Players should be at the venue at least one hour before each scheduled game." },
