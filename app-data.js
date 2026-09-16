@@ -27,7 +27,13 @@ window.APP_DATA = {
       id: 2,
       priority: "important",
       title: "Final Nationals Actions",
-      message: "Medical Forms: you should have received an email with your child’s form. Please complete it and upload it to the U9 document folder. SIA Training: all required modules must be completed by 11:59pm Sunday 20 September; upload the completed certificate to the same folder. Then update the U9 Team Information & Checklist spreadsheet, tick off both uploads and complete any missing details. If the Treasurer has contacted you about an outstanding balance, please finalise payment or contact them to arrange a payment plan. The wine raffle is drawn this Saturday, so all outstanding ticket books and money need to be returned before the draw.",
+      sections: [
+        { icon: "📄", heading: "Medical Forms", text: "You should have received an email with your child’s medical form. Please complete it and upload it to the U9 document folder." },
+        { icon: "✅", heading: "SIA Training", text: "All required modules must be completed by 11:59pm Sunday 20 September. Once complete, upload your SIA certificate to the same folder." },
+        { icon: "📋", heading: "Team Checklist", text: "Please update the U9 Team Information & Checklist: tick off your Medical Form, tick off your SIA Certificate, and complete any missing player details." },
+        { icon: "💳", heading: "Nationals Payments", text: "If the Treasurer has contacted you about an outstanding balance, please finalise payment or contact them to arrange a payment plan." },
+        { icon: "🎟️", heading: "Wine Raffle", text: "The raffle is drawn this Saturday. Please return any outstanding ticket books and money before the draw." }
+      ],
       author: "Brooke",
       updated: "16 Sep 2026",
       active: true,
