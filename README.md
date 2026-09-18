@@ -1,15 +1,13 @@
-## V11 update
-- Added compact SA-colour jersey graphics to the right side of each player card.
-- Jerseys show verified playing numbers only (no names), keeping the roster easy to scan on mobile.
-- Rylee Ruwette spelling retained.
-- Existing official roster artwork remains unchanged.
+# SA U9 Inline Nationals 2026 — Team Hub V12
 
-# SA U9 Inline Nationals 2026 — Team Hub v10
+## V12 schedule update — 18 September 2026
+- Updated to official Nationals Draw v2.8.
+- Four confirmed SA U9 round-robin games remain unchanged.
+- Updated conditional U9 finals pathway, including Game 125: 3rd vs Winner Game 113.
+- Conditional finals are clearly labelled and do not automatically become the Next Game.
+- Schedule version/date updated to v2.8 / 18 September 2026.
+- Info → Documents now opens the packaged Nationals Draw v2.8.
+- PWA cache bumped to V12.
+- Existing V11 roster, jersey graphics, artwork, announcements, checklist and links retained.
 
-## V10 update
-- Corrected **Rylee Ruwette** everywhere in the live team data.
-- Replaced the stale roster image on the Team page with a live SA-styled roster panel generated from the verified team data, so the displayed roster no longer contains the incorrect “Riley” spelling.
-- Retains the V9 structured Final Nationals Actions announcement and all existing team links/resources.
-- Cache bumped to v10.
-
-Upload/replace the full contents of this folder in the GitHub Pages repository, then commit the changes.
+Upload/replace the full contents of this folder in the GitHub Pages repository, then commit.

@@ -6,8 +6,8 @@ window.APP_DATA = {
     address: "34–38 Johnson Road, Hillcrest QLD 4118",
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
-    scheduleVersion: "v2.6",
-    lastUpdated: "16 September 2026",
+    scheduleVersion: "v2.8",
+    lastUpdated: "18 September 2026",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
@@ -17,7 +17,7 @@ window.APP_DATA = {
     siaUrl: "https://elearning.sportintegrity.gov.au/",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118",
     championshipRulesUrl: "./docs/2026-skate-australia-national-championship-document.pdf",
-    fullDrawUrl: "./docs/nationals-2026-draw-v2.6.xlsx",
+    fullDrawUrl: "./docs/nationals-2026-draw-v2.8.xlsx",
     teamUploadsUrl: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing",
     teamSpreadsheetUrl: "https://docs.google.com/spreadsheets/d/1zSafcqouwXUKEbO2DvjxHqYdp9uXnGW-3wv9OUbmY8E/edit?usp=sharing"
   },
@@ -75,11 +75,11 @@ window.APP_DATA = {
     { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", homeScore: null, awayScore: null }
   ],
   finals: [
-    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "Play-in game if applicable", confirmed: false },
-    { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "Finals pathway", confirmed: false },
-    { id: 125, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "11:10", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs 4th", note: "Finals pathway", confirmed: false },
-    { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "Finals pathway", confirmed: false },
-    { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "Grand Final", confirmed: false }
+    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "CONDITIONAL · SA plays if finishing 4th or 5th", confirmed: false },
+    { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "CONDITIONAL · SA plays if finishing 1st or 2nd", confirmed: false },
+    { id: 125, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "11:10", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs Winner Game 113", note: "CONDITIONAL · SA may play depending on ladder position / Game 113", confirmed: false },
+    { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "CONDITIONAL · SA may play depending on earlier finals results", confirmed: false },
+    { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "CONDITIONAL · U9 Grand Final if SA qualifies", confirmed: false }
   ],
   checklist: [
     { title: "SA registration", detail: "Player SA registration complete." },
