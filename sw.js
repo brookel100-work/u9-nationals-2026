@@ -1,5 +1,5 @@
-const CACHE='sa-u9-nationals-v12';
-const CORE=['./','./index.html','./styles.css?v=12','./app.js?v=12','./app-data.js?v=12','./manifest.webmanifest','./assets/sa-u9-home-hero.png','./assets/sa-u9-team-header.png','./assets/nationals-2026-header.png','./assets/schedule-results-header.png','./assets/nationals-checklist-header.png','./assets/app-icon-192.png','./assets/app-icon-512.png','./docs/2026-skate-australia-national-championship-document.pdf','./docs/nationals-2026-draw-v2.8.xlsx'];
+const CACHE='sa-u9-nationals-v13';
+const CORE=['./','./index.html','./styles.css?v=13','./app.js?v=13','./app-data.js?v=13','./manifest.webmanifest','./assets/sa-u9-home-hero.png','./assets/sa-u9-team-header.png','./assets/sa-u9-official-roster.jpeg','./assets/nationals-2026-header.png','./assets/schedule-results-header.png','./assets/nationals-checklist-header.png','./assets/app-icon-192.png','./assets/app-icon-512.png','./docs/2026-skate-australia-national-championship-document.pdf','./docs/nationals-2026-draw-v2.8.xlsx'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request)))});

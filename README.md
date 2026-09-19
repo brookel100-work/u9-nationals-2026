@@ -1,4 +1,4 @@
-# SA U9 Inline Nationals 2026 — Team Hub V12
+# SA U9 Inline Nationals 2026 — Team Hub V13
 
 ## V12 schedule update — 18 September 2026
 - Updated to official Nationals Draw v2.8.
@@ -7,7 +7,13 @@
 - Conditional finals are clearly labelled and do not automatically become the Next Game.
 - Schedule version/date updated to v2.8 / 18 September 2026.
 - Info → Documents now opens the packaged Nationals Draw v2.8.
-- PWA cache bumped to V12.
+- PWA cache bumped to V13.
 - Existing V11 roster, jersey graphics, artwork, announcements, checklist and links retained.
 
 Upload/replace the full contents of this folder in the GitHub Pages repository, then commit.
+
+## V13 team artwork update — 19 September 2026
+- Corrected red/gold U9 Representative Team artwork included and displayed on the Team page.
+- Rylee Ruwette spelling is correct.
+- Roster includes Jasiah Mumford, Coach Rohan Grantham and Manager Brooke Lodge.
+- Updated artwork is included in the PWA cache.
