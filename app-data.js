@@ -41,17 +41,17 @@ window.APP_DATA = {
     }
   ],
   team: [
-    { name: "Rowan Broderick", role: "Captain", badge: "C" },
-    { name: "Odin Grantham", role: "Alternate", badge: "A" },
-    { name: "Safira Giveen", role: "Player" },
-    { name: "Thomas Halsted", role: "Player" },
-    { name: "Ethan Huang", role: "Player" },
-    { name: "Ben Karapandzic", role: "Player" },
-    { name: "Harrison Kelleher", role: "Player" },
-    { name: "Beau Mumford", role: "Player" },
-    { name: "Jasiah Mumford", role: "Player" },
-    { name: "Rylee Ruwette", role: "Player" },
-    { name: "TJ Lodge", role: "Goalkeeper", badge: "G" }
+    { name: "Rowan Broderick", role: "Captain", badge: "C", number: 26 },
+    { name: "Odin Grantham", role: "Alternate", badge: "A", number: 5 },
+    { name: "Safira Giveen", role: "Player", number: 8 },
+    { name: "Thomas Halsted", role: "Player", number: 96 },
+    { name: "Ethan Huang", role: "Player", number: 16 },
+    { name: "Ben Karapandzic", role: "Player", number: 10 },
+    { name: "Harrison Kelleher", role: "Player", number: 8 },
+    { name: "Beau Mumford", role: "Player", number: 1 },
+    { name: "Jasiah Mumford", role: "Player", number: 30 },
+    { name: "Rylee Ruwette", role: "Player", number: 21 },
+    { name: "TJ Lodge", role: "Goalkeeper", badge: "G", number: 1 }
   ],
   staff: [
     { name: "Rohan Grantham", role: "Coach" },

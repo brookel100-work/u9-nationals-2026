@@ -39,3 +39,12 @@
   .rules-header-img{height:auto;aspect-ratio:1050/632;object-fit:cover}
   .header-img[src*="nationals-2026-header"]{height:auto;aspect-ratio:auto;object-fit:contain}
 }
+
+/* V16 team restoration + clean mobile Rules banner */
+.team-header-img{height:190px!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:center!important}
+.rules-art{min-height:190px;margin-bottom:18px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.09);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;gap:18px;padding:24px;background:radial-gradient(circle at 20% 40%,rgba(215,38,46,.34),transparent 35%),radial-gradient(circle at 82% 55%,rgba(86,208,197,.25),transparent 38%),linear-gradient(135deg,#071426,#102746 55%,#071426);position:relative}
+.rules-art:before,.rules-art:after{content:"";position:absolute;width:180px;height:5px;background:linear-gradient(90deg,var(--red),var(--gold),var(--aqua));transform:rotate(-18deg);opacity:.65}.rules-art:before{left:-35px;top:28px}.rules-art:after{right:-45px;bottom:25px}
+.rules-art-mark{font-size:72px;line-height:1;color:var(--gold);font-weight:900;text-shadow:0 4px 18px rgba(0,0,0,.4)}
+.rules-art span{display:block;font-size:11px;letter-spacing:2.4px;color:var(--aqua);font-weight:900;margin-bottom:6px}.rules-art strong{display:block;font-size:36px;line-height:.95;font-style:italic;letter-spacing:-1px}.rules-art strong i{color:var(--gold);font-style:normal}
+.quick-rules .quick-icon{background:rgba(255,198,41,.12);color:var(--gold)}
+@media(max-width:430px){.team-header-img{height:180px!important}.rules-art{min-height:180px}.rules-art strong{font-size:32px}.rules-art-mark{font-size:62px}}
