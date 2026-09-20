@@ -25,22 +25,18 @@ window.APP_DATA = {
 
   announcements: [
     {
-      id: 2,
+      id: 3,
       priority: "important",
-      title: "Final Nationals Actions",
+      title: "Nationals Reminder",
       sections: [
-        { icon: "📄", heading: "Medical Forms", text: "You should have received an email with your child’s medical form. Please complete it and upload it to the U9 document folder." },
-        { icon: "✅", heading: "SIA Training", text: "All required modules must be completed by 11:59pm Sunday 20 September. Once complete, upload your SIA certificate to the same folder." },
-        { icon: "📋", heading: "Team Checklist", text: "Please update the U9 Team Information & Checklist: tick off your Medical Form, tick off your SIA Certificate, and complete any missing player details." },
-        { icon: "💳", heading: "Nationals Payments", text: "If the Treasurer has contacted you about an outstanding balance, please finalise payment or contact them to arrange a payment plan." },
-        { icon: "🎟️", heading: "Wine Raffle", text: "The raffle is drawn this Saturday. Please return any outstanding ticket books and money before the draw." }
+        { icon: "📄", heading: "Forms due today", text: "Don’t forget to upload your child’s completed Medical Form and SIA certificate today." },
+        { icon: "§", heading: "New Rules & Regs section", text: "We’ve added a Rules & Regs section to the app with the key game-day, equipment and Nationals rules for players and families." }
       ],
       author: "Brooke",
-      updated: "16 Sep 2026",
+      updated: "20 Sep 2026",
       active: true,
       actions: [
-        { label: "Upload Medical Form / SIA Certificate", url: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing" },
-        { label: "Update U9 Team Checklist", url: "https://docs.google.com/spreadsheets/d/1zSafcqouwXUKEbO2DvjxHqYdp9uXnGW-3wv9OUbmY8E/edit?usp=sharing" }
+        { label: "Upload Medical Form / SIA Certificate", url: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing" }
       ]
     }
   ],

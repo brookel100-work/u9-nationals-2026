@@ -30,3 +30,12 @@
 /* V14: mobile-first Rules & Regs */
 .rules-hero{min-height:132px;margin-bottom:14px;border-radius:20px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;padding:22px 18px;background:radial-gradient(circle at 20% 30%,rgba(215,38,46,.52),transparent 34%),radial-gradient(circle at 82% 70%,rgba(86,208,197,.35),transparent 34%),linear-gradient(135deg,#071426,#0b1e3a 52%,#071426);text-align:center}.rules-hero span,.rules-hero strong{font-size:clamp(32px,9vw,54px);line-height:.92;font-weight:1000;font-style:italic;letter-spacing:-1.8px}.rules-hero span{color:#fff}.rules-hero strong{color:#56d0c5}.rule-lead h3{margin:0 0 8px;font-size:17px}.rule-lead p,.rule-body p,.rule-doc-intro{font-size:11px;line-height:1.55;color:#d7e1ec}.rule-lead ul,.rule-body ul{padding-left:19px;margin:10px 0}.rule-lead li,.rule-body li{margin:7px 0;font-size:11px;line-height:1.45;color:#d7e1ec}.rule-note{padding:10px 11px;border-radius:11px;background:rgba(86,208,197,.08);border:1px solid rgba(86,208,197,.22)}.rule-card{background:linear-gradient(180deg,#102746,#0b1e35);border:1px solid var(--line);border-radius:16px;margin-bottom:9px;overflow:hidden}.rule-card summary{cursor:pointer;padding:14px 15px;font-size:13px;font-weight:900;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center}.rule-card summary::-webkit-details-marker{display:none}.rule-card summary:after{content:'+';color:var(--gold);font-size:20px;line-height:1}.rule-card[open] summary:after{content:'–'}.rule-body{padding:0 15px 14px;border-top:1px solid rgba(255,255,255,.06)}.rule-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.rule-links .button-link{background:#173252}.roster-panel{margin-top:10px}.official-roster-card{margin-bottom:10px}
 @media(max-width:430px){.rules-hero{min-height:118px}.rules-hero span,.rules-hero strong{font-size:clamp(29px,9.5vw,43px)}}
+
+/* V15: stronger mobile banner presence without changing the Info artwork */
+.rules-header-img{aspect-ratio:1050/632;object-fit:cover}
+@media(max-width:430px){
+  .hero-img{height:150px;aspect-ratio:auto;object-fit:cover;object-position:center}
+  .header-img[src*="schedule-results-header"]{height:150px;aspect-ratio:auto;object-fit:cover;object-position:center}
+  .rules-header-img{height:auto;aspect-ratio:1050/632;object-fit:cover}
+  .header-img[src*="nationals-2026-header"]{height:auto;aspect-ratio:auto;object-fit:contain}
+}
