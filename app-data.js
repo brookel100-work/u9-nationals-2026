@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "18 September 2026",
+    lastUpdated: "20 September 2026",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
@@ -17,6 +17,7 @@ window.APP_DATA = {
     siaUrl: "https://elearning.sportintegrity.gov.au/",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Skate+Paradise+34-38+Johnson+Road+Hillcrest+QLD+4118",
     championshipRulesUrl: "./docs/2026-skate-australia-national-championship-document.pdf",
+    inlineRulesUrl: "https://www.skateaustralia.org.au/inline-hockey",
     fullDrawUrl: "./docs/nationals-2026-draw-v2.8.xlsx",
     teamUploadsUrl: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing",
     teamSpreadsheetUrl: "https://docs.google.com/spreadsheets/d/1zSafcqouwXUKEbO2DvjxHqYdp9uXnGW-3wv9OUbmY8E/edit?usp=sharing"
@@ -44,17 +45,17 @@ window.APP_DATA = {
     }
   ],
   team: [
-    { name: "Rowan Broderick", role: "Captain", badge: "C", number: 26 },
-    { name: "Odin Grantham", role: "Alternate", badge: "A", number: 5 },
-    { name: "Safira Giveen", role: "Player", number: 8 },
-    { name: "Thomas Halsted", role: "Player", number: 96 },
-    { name: "Ethan Huang", role: "Player", number: 16 },
-    { name: "Ben Karapandzic", role: "Player", number: 10 },
-    { name: "Harrison Kelleher", role: "Player", number: 8 },
-    { name: "Beau Mumford", role: "Player", number: 1 },
-    { name: "Jasiah Mumford", role: "Player", number: 30 },
-    { name: "Rylee Ruwette", role: "Player", number: 21 },
-    { name: "TJ Lodge", role: "Goalkeeper", badge: "G", number: 1 }
+    { name: "Rowan Broderick", role: "Captain", badge: "C" },
+    { name: "Odin Grantham", role: "Alternate", badge: "A" },
+    { name: "Safira Giveen", role: "Player" },
+    { name: "Thomas Halsted", role: "Player" },
+    { name: "Ethan Huang", role: "Player" },
+    { name: "Ben Karapandzic", role: "Player" },
+    { name: "Harrison Kelleher", role: "Player" },
+    { name: "Beau Mumford", role: "Player" },
+    { name: "Jasiah Mumford", role: "Player" },
+    { name: "Rylee Ruwette", role: "Player" },
+    { name: "TJ Lodge", role: "Goalkeeper", badge: "G" }
   ],
   staff: [
     { name: "Rohan Grantham", role: "Coach" },
@@ -81,16 +82,4 @@ window.APP_DATA = {
     { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "CONDITIONAL · SA may play depending on earlier finals results", confirmed: false },
     { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "CONDITIONAL · U9 Grand Final if SA qualifies", confirmed: false }
   ],
-  checklist: [
-    { title: "SA registration", detail: "Player SA registration complete." },
-    { title: "Revolutionise Nationals registration", detail: "Nationals registration completed through Revolutionise." },
-    { title: "Medical Form", detail: "Complete the medical form emailed to your family and upload it to the U9 document folder before the first game." },
-    { title: "Sports Integrity Australia Training", detail: "Complete all required SIA modules by 11:59pm Sunday 20 September and upload the certificate to the U9 document folder." },
-    { title: "U9 Team Information & Checklist", detail: "Tick off your Medical Form and SIA Certificate uploads and complete any missing player details in the team spreadsheet." },
-    { title: "Nationals fees", detail: "If contacted by the Treasurer about an outstanding balance, finalise payment or contact them to arrange a payment plan." },
-    { title: "Uniform", detail: "Official State playing uniform packed, clean and in good repair." },
-    { title: "White stick tape", detail: "Only white tape is permitted on stick blades at Nationals." },
-    { title: "Arrive one hour before games", detail: "Players should be at the venue at least one hour before each scheduled game." },
-    { title: "Proof of age", detail: "Have access to an original birth certificate or passport if requested." }
-  ]
 };
