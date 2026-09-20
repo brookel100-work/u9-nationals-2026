@@ -1,4 +1,4 @@
-# SA U9 Inline Nationals 2026 — Team Hub V16
+# SA U9 Inline Nationals 2026 — Team Hub V17
 
 ## V12 schedule update — 18 September 2026
 - Updated to official Nationals Draw v2.8.
@@ -7,22 +7,28 @@
 - Conditional finals are clearly labelled and do not automatically become the Next Game.
 - Schedule version/date updated to v2.8 / 18 September 2026.
 - Info → Documents now opens the packaged Nationals Draw v2.8.
-- PWA cache bumped to V16.
+- PWA cache bumped to V17.
 - Existing V11 roster, jersey graphics, artwork, announcements, checklist and links retained.
 
 Upload/replace the full contents of this folder in the GitHub Pages repository, then commit.
 
-## V16 team artwork update — 19 September 2026
+## V17 team artwork update — 19 September 2026
 - Corrected red/gold U9 Representative Team artwork included and displayed on the Team page.
 - Rylee Ruwette spelling is correct.
 - Roster includes Jasiah Mumford, Coach Rohan Grantham and Manager Brooke Lodge.
 - Updated artwork is included in the PWA cache.
 
 
-## V16 updates
+## V17 updates
 - Replaced the in-app Checklist tab with a detailed mobile-first Rules & Regs guide.
 - Added verified junior protective-equipment requirements from the ILHA January 2021 rulebook.
 - Kept the existing Nationals Info banner unchanged.
 - Simplified Team to the official roster artwork plus a clean team/staff list; removed duplicate player cards and unreliable jersey-number graphics.
 - Preserved schedule v2.8 and conditional finals behaviour.
-- Cache/version bumped to V16.
+- Cache/version bumped to V17.
+
+
+## V17
+- Added approved Rules & Regs banner artwork.
+- Added visible Rules & Regs Quick Access icon.
+- No team jersey numbers changed in this build because final confirmed numbers have not been supplied.

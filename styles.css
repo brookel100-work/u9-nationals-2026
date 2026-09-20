@@ -48,3 +48,6 @@
 .rules-art span{display:block;font-size:11px;letter-spacing:2.4px;color:var(--aqua);font-weight:900;margin-bottom:6px}.rules-art strong{display:block;font-size:36px;line-height:.95;font-style:italic;letter-spacing:-1px}.rules-art strong i{color:var(--gold);font-style:normal}
 .quick-rules .quick-icon{background:rgba(255,198,41,.12);color:var(--gold)}
 @media(max-width:430px){.team-header-img{height:180px!important}.rules-art{min-height:180px}.rules-art strong{font-size:32px}.rules-art-mark{font-size:62px}}
+
+.rules-header-img{aspect-ratio:3.2/1;object-fit:cover;object-position:center;margin-bottom:14px}
+@media(max-width:430px){.rules-header-img{aspect-ratio:2.15/1;object-fit:cover;object-position:center}}
