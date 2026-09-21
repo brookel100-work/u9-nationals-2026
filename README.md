@@ -1,4 +1,4 @@
-# SA U9 Inline Nationals 2026 — Team Hub V17
+# SA U9 Inline Nationals 2026 — Team Hub V18
 
 ## V12 schedule update — 18 September 2026
 - Updated to official Nationals Draw v2.8.
@@ -32,3 +32,11 @@ Upload/replace the full contents of this folder in the GitHub Pages repository, 
 - Added approved Rules & Regs banner artwork.
 - Added visible Rules & Regs Quick Access icon.
 - No team jersey numbers changed in this build because final confirmed numbers have not been supplied.
+
+
+## V18 — 21 September 2026
+- Replaced the previous forms/SIA announcement with the Nationals Week packing reminder.
+- Reminder covers SA playing uniform, SA polo, playing gear, skates and stick/s.
+- Points families to the existing Rules & Regs section for game-day information.
+- PWA cache/assets bumped to V18.
+- No schedule, team, jersey-number, banner or Rules & Regs content changed in this build.

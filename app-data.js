@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "20 September 2026",
+    lastUpdated: "21 September 2026",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
@@ -25,19 +25,14 @@ window.APP_DATA = {
 
   announcements: [
     {
-      id: 3,
-      priority: "important",
-      title: "Nationals Reminder",
-      sections: [
-        { icon: "📄", heading: "Forms due today", text: "Don’t forget to upload your child’s completed Medical Form and SIA certificate today." },
-        { icon: "§", heading: "New Rules & Regs section", text: "We’ve added a Rules & Regs section to the app with the key game-day, equipment and Nationals rules for players and families." }
-      ],
+      id: 4,
+      priority: "reminder",
+      title: "Nationals Week!",
+      message: "With everyone starting to make their way to QLD, please do one final check that you’ve packed your SA playing uniform, SA polo, all playing gear, skates and stick/s. Everything you need to know for game day is available in Rules & Regs. Let’s go SA! ❤️💙💛",
       author: "Brooke",
-      updated: "20 Sep 2026",
+      updated: "21 Sep 2026",
       active: true,
-      actions: [
-        { label: "Upload Medical Form / SIA Certificate", url: "https://drive.google.com/drive/folders/1-eXuT6zhu-p6R9TjgrTQbpu2bYzWO-Ix?usp=sharing" }
-      ]
+      actions: []
     }
   ],
   team: [
