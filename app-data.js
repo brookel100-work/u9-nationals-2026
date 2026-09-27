@@ -7,11 +7,12 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "21 September 2026",
+    lastUpdated: "27 September 2026 · V21",
+    hockeySyteTeamUrl: "https://ilha.hockeysyte.com/team/993",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
-    hockeySyteUrl: "https://ilha.hockeysyte.com/superseason/3",
+    hockeySyteUrl: "https://ilha.hockeysyte.com/season/1130",
     youtubeUrl: "https://www.youtube.com/channel/UCpTgd-95phCRHQblnYzezTw",
     revolutioniseUrl: "https://www.revolutionise.com.au/skate/events/359351",
     siaUrl: "https://elearning.sportintegrity.gov.au/",
@@ -27,12 +28,12 @@ window.APP_DATA = {
     {
       id: 4,
       priority: "reminder",
-      title: "Nationals Week!",
-      message: "With everyone starting to make their way to QLD, please do one final check that you’ve packed your SA playing uniform, SA polo, all playing gear, skates and stick/s. Everything you need to know for game day is available in Rules & Regs. Let’s go SA! ❤️💙💛",
+      title: "Nationals Is Underway!",
+      message: "Nationals is underway! Our first U9 game is Monday at 9:15am — team arrival 8:15am. Final rink and game-day instructions are in Rules & Regs, and live 2026 Nationals results and stats are now available through HockeySyte. Let’s go SA! ❤️💙💛",
       author: "Brooke",
-      updated: "21 Sep 2026",
-      active: true,
-      actions: []
+      updated: "27 Sep 2026",
+      active: false,
+      actions: [{ label: "Live 2026 Nationals Stats", url: "https://ilha.hockeysyte.com/season/1130" }]
     }
   ],
   team: [
@@ -42,8 +43,8 @@ window.APP_DATA = {
     { name: "Thomas Halsted", role: "Player", number: 96 },
     { name: "Ethan Huang", role: "Player", number: 16 },
     { name: "Ben Karapandzic", role: "Player", number: 10 },
-    { name: "Harrison Kelleher", role: "Player", number: 8 },
-    { name: "Beau Mumford", role: "Player", number: 1 },
+    { name: "Harrison Kelleher", role: "Player", number: 81 },
+    { name: "Beau Mumford", role: "Player", number: 2 },
     { name: "Jasiah Mumford", role: "Player", number: 30 },
     { name: "Rylee Ruwette", role: "Player", number: 21 },
     { name: "TJ Lodge", role: "Goalkeeper", badge: "G", number: 1 }
@@ -66,6 +67,23 @@ window.APP_DATA = {
     { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
     { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", homeScore: null, awayScore: null }
   ],
+  liveSnapshot: {
+    source: "HockeySyte",
+    sourceLabel: "HockeySyte snapshot · 27 Sep",
+    updated: "27 Sep 2026",
+    note: "Current U9 standings and results captured from HockeySyte. Automatic feed connection is being prepared.",
+    standings: [
+      { team: "QLD", name: "Queensland", gp: 1, w: 1, l: 0, pts: 2, gf: 20, ga: 0 },
+      { team: "VIC", name: "Victoria", gp: 1, w: 1, l: 0, pts: 2, gf: 20, ga: 2 },
+      { team: "SA", name: "South Australia", gp: 0, w: 0, l: 0, pts: 0, gf: 0, ga: 0 },
+      { team: "NSW", name: "New South Wales", gp: 1, w: 0, l: 1, pts: 0, gf: 2, ga: 20 },
+      { team: "TAS", name: "Tasmania", gp: 1, w: 0, l: 1, pts: 0, gf: 0, ga: 20 }
+    ],
+    results: [
+      { home: "QLD", away: "TAS", homeScore: 20, awayScore: 0 },
+      { home: "VIC", away: "NSW", homeScore: 20, awayScore: 2 }
+    ]
+  },
   finals: [
     { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "CONDITIONAL · SA plays if finishing 4th or 5th", confirmed: false },
     { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "CONDITIONAL · SA plays if finishing 1st or 2nd", confirmed: false },

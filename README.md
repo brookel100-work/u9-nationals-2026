@@ -40,3 +40,11 @@ Upload/replace the full contents of this folder in the GitHub Pages repository, 
 - Points families to the existing Rules & Regs section for game-day information.
 - PWA cache/assets bumped to V18.
 - No schedule, team, jersey-number, banner or Rules & Regs content changed in this build.
+
+
+## V20 — Live Nationals stats + game-day update
+- Updated HockeySyte throughout the app to the live 2026 Nationals season page (season 1130).
+- Promoted live results/stats in Home Quick Access, Schedule & Results and Info.
+- Updated the Home announcement for Nationals being underway and the Monday 9:15am U9 opener / 8:15am arrival.
+- Retained the current NTC venue/game-day Rules & Regs from V19, including 3-minute warm-up, SA polos, team entry/holding area, bag storage, white stick tape and red-line handshakes.
+- No roster, jersey-number, draw or artwork changes in this build.
