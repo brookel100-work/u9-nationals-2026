@@ -59,3 +59,13 @@ Upload/replace the full contents of this folder in the GitHub Pages repository, 
 
 ### One-time GitHub step
 Upload/replace the repository with this V22 pack and make sure GitHub Actions are enabled for the repository. Then open **Actions → Sync HockeySyte Nationals data → Run workflow** once to verify the first live refresh. After that, the scheduled job runs automatically.
+
+
+## V23 — Nationals usability update — 28 September 2026
+- Removed the large LIVE/countdown treatment from Home; Home now prioritises latest SA result, next game, compact standings and recent U9 results.
+- Moved the embedded official Nationals Facebook feed from Home to Info.
+- Completed SA game cards now show the final score when synced and link directly to HockeySyte for detailed game/player statistics.
+- Added the supplied QLD v SA Game 23 HockeySyte article (`/news/343`) as the direct Game 23 details link.
+- The automatic sync now also opens the Game 23 article, giving it another official source from which to detect the QLD v SA result.
+- No player statistics are fabricated: detailed stats remain linked to HockeySyte until the automatic parser can verify those fields.
+- PWA cache bumped to V23.

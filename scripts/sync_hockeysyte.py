@@ -6,6 +6,7 @@ from playwright.sync_api import sync_playwright
 
 SEASON='https://ilha.hockeysyte.com/season/1130'
 TEAM='https://ilha.hockeysyte.com/team/993'
+GAME23='https://ilha.hockeysyte.com/news/343'
 OUT=Path(__file__).resolve().parents[1]/'live-data.json'
 TEAMS={'QUEENSLAND':'QLD','QLD':'QLD','VICTORIA':'VIC','VIC':'VIC','SOUTH AUSTRALIA':'SA','SA':'SA','NEW SOUTH WALES':'NSW','NSW':'NSW','TASMANIA':'TAS','TAS':'TAS'}
 NAMES={'QLD':'Queensland','VIC':'Victoria','SA':'South Australia','NSW':'New South Wales','TAS':'Tasmania'}
@@ -104,7 +105,7 @@ def main():
         browser=p.chromium.launch(headless=True)
         page=browser.new_page(viewport={'width':1440,'height':1600})
         all_tables=[]; bodies=[]
-        for url in (SEASON,TEAM):
+        for url in (SEASON,TEAM,GAME23):
             page.goto(url,wait_until='networkidle',timeout=90000)
             page.wait_for_timeout(2500)
             all_tables += tables(page)

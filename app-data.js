@@ -7,8 +7,10 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "28 September 2026 · V22",
+    lastUpdated: "28 September 2026 · V23",
     hockeySyteTeamUrl: "https://ilha.hockeysyte.com/team/993",
+    hockeySyteGame23Url: "https://ilha.hockeysyte.com/news/343",
+    hockeySyteHomeUrl: "https://ilha.hockeysyte.com/",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     messengerGroupUrl: "https://www.facebook.com/messages/t/1678355176805330",
@@ -62,7 +64,7 @@ window.APP_DATA = {
     { dateLabel: "Sat 12 Sep", timeLabel: "1:15–2:30pm" }
   ],
   schedule: [
-    { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
+    { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/news/343", homeScore: null, awayScore: null },
     { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", home: "SA", away: "NSW", venue: "Skate Paradise", homeScore: null, awayScore: null },
     { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
     { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", homeScore: null, awayScore: null }
