@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "28 September 2026 · V23",
+    lastUpdated: "28 September 2026 · V24",
     hockeySyteTeamUrl: "https://ilha.hockeysyte.com/team/993",
     hockeySyteGame23Url: "https://ilha.hockeysyte.com/news/343",
     hockeySyteHomeUrl: "https://ilha.hockeysyte.com/",
@@ -39,17 +39,17 @@ window.APP_DATA = {
     }
   ],
   team: [
-    { name: "Rowan Broderick", role: "Captain", badge: "C", number: 26 },
-    { name: "Odin Grantham", role: "Alternate", badge: "A", number: 5 },
-    { name: "Safira Giveen", role: "Player", number: 8 },
-    { name: "Thomas Halsted", role: "Player", number: 96 },
-    { name: "Ethan Huang", role: "Player", number: 16 },
-    { name: "Ben Karapandzic", role: "Player", number: 10 },
-    { name: "Harrison Kelleher", role: "Player", number: 81 },
-    { name: "Beau Mumford", role: "Player", number: 2 },
-    { name: "Jasiah Mumford", role: "Player", number: 30 },
-    { name: "Rylee Ruwette", role: "Player", number: 21 },
-    { name: "TJ Lodge", role: "Goalkeeper", badge: "G", number: 1 }
+    { name: "Rowan Broderick", hockeySyteId: "14594", profileUrl: "https://ilha.hockeysyte.com/player/14594", role: "Captain", badge: "C", number: 26 },
+    { name: "Odin Grantham", hockeySyteId: "14595", profileUrl: "https://ilha.hockeysyte.com/player/14595", role: "Alternate", badge: "A", number: 5 },
+    { name: "Safira Giveen", hockeySyteId: "14598", profileUrl: "https://ilha.hockeysyte.com/player/14598", role: "Player", number: 8 },
+    { name: "Thomas Halsted", hockeySyteId: "14600", profileUrl: "https://ilha.hockeysyte.com/player/14600", role: "Player", number: 96 },
+    { name: "Ethan Huang", hockeySyteId: "14596", profileUrl: "https://ilha.hockeysyte.com/player/14596", role: "Player", number: 16 },
+    { name: "Ben Karapandzic", hockeySyteId: "14593", profileUrl: "https://ilha.hockeysyte.com/player/14593", role: "Player", number: 10 },
+    { name: "Harrison Kelleher", hockeySyteId: "14599", profileUrl: "https://ilha.hockeysyte.com/player/14599", role: "Player", number: 81 },
+    { name: "Beau Mumford", hockeySyteId: "14601", profileUrl: "https://ilha.hockeysyte.com/player/14601", role: "Player", number: 2 },
+    { name: "Jasiah Mumford", hockeySyteId: "14602", profileUrl: "https://ilha.hockeysyte.com/player/14602", role: "Player", number: 30 },
+    { name: "Rylee Ruwette", hockeySyteId: "14597", profileUrl: "https://ilha.hockeysyte.com/player/14597", role: "Player", number: 21 },
+    { name: "TJ Lodge", hockeySyteId: "14592", profileUrl: "https://ilha.hockeysyte.com/player/14592", role: "Goalkeeper", badge: "G", number: 1 }
   ],
   staff: [
     { name: "Rohan Grantham", role: "Coach" },

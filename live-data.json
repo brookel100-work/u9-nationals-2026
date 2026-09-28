@@ -1,18 +1,148 @@
 {
   "source": "HockeySyte",
-  "sourceLabel": "HockeySyte snapshot · 27 Sep",
-  "updated": "2026-09-27T00:00:00+10:00",
-  "note": "Last-known-good HockeySyte data. Automatic sync refreshes this file when verified data is available.",
+  "sourceLabel": "HockeySyte \u00b7 28 Sep snapshot",
+  "updated": "2026-09-28T20:34:00+10:00",
+  "note": "Latest verified HockeySyte snapshot; automatic GitHub sync will replace each section when fresh rendered data is verified.",
   "standings": [
-    {"team":"QLD","name":"Queensland","gp":1,"w":1,"l":0,"pts":2,"gf":20,"ga":0},
-    {"team":"VIC","name":"Victoria","gp":1,"w":1,"l":0,"pts":2,"gf":20,"ga":2},
-    {"team":"SA","name":"South Australia","gp":0,"w":0,"l":0,"pts":0,"gf":0,"ga":0},
-    {"team":"NSW","name":"New South Wales","gp":1,"w":0,"l":1,"pts":0,"gf":2,"ga":20},
-    {"team":"TAS","name":"Tasmania","gp":1,"w":0,"l":1,"pts":0,"gf":0,"ga":20}
+    {
+      "team": "QLD",
+      "name": "Queensland",
+      "gp": 2,
+      "w": 2,
+      "l": 0,
+      "pts": 4,
+      "gf": null,
+      "ga": null
+    },
+    {
+      "team": "VIC",
+      "name": "Victoria",
+      "gp": 2,
+      "w": 2,
+      "l": 0,
+      "pts": 4,
+      "gf": null,
+      "ga": null
+    },
+    {
+      "team": "NSW",
+      "name": "New South Wales",
+      "gp": 1,
+      "w": 0,
+      "l": 1,
+      "pts": 0,
+      "gf": 2,
+      "ga": 20
+    },
+    {
+      "team": "SA",
+      "name": "South Australia",
+      "gp": 1,
+      "w": 0,
+      "l": 1,
+      "pts": 0,
+      "gf": 0,
+      "ga": 18
+    },
+    {
+      "team": "TAS",
+      "name": "Tasmania",
+      "gp": 2,
+      "w": 0,
+      "l": 2,
+      "pts": 0,
+      "gf": null,
+      "ga": null
+    }
   ],
   "results": [
-    {"home":"QLD","away":"TAS","homeScore":20,"awayScore":0},
-    {"home":"VIC","away":"NSW","homeScore":20,"awayScore":2}
+    {
+      "home": "QLD",
+      "away": "TAS",
+      "homeScore": 20,
+      "awayScore": 0
+    },
+    {
+      "home": "VIC",
+      "away": "NSW",
+      "homeScore": 20,
+      "awayScore": 2
+    },
+    {
+      "home": "QLD",
+      "away": "SA",
+      "homeScore": 18,
+      "awayScore": 0
+    }
   ],
-  "scheduleResults": {}
+  "scheduleResults": {
+    "23": {
+      "homeScore": 18,
+      "awayScore": 0
+    }
+  },
+  "playerStats": {
+    "14592": {
+      "name": "TJ Lodge",
+      "url": "https://ilha.hockeysyte.com/player/14592",
+      "stats": {
+        "MP": 40,
+        "SA": 33,
+        "GA": 18,
+        "GAA": 18.0,
+        "S": 15,
+        "SV%": 0.455
+      }
+    },
+    "14593": {
+      "name": "Ben Karapandzic",
+      "url": "https://ilha.hockeysyte.com/player/14593",
+      "stats": {}
+    },
+    "14594": {
+      "name": "Rowan Broderick",
+      "url": "https://ilha.hockeysyte.com/player/14594",
+      "stats": {}
+    },
+    "14595": {
+      "name": "Odin Grantham",
+      "url": "https://ilha.hockeysyte.com/player/14595",
+      "stats": {}
+    },
+    "14596": {
+      "name": "Ethan Huang",
+      "url": "https://ilha.hockeysyte.com/player/14596",
+      "stats": {}
+    },
+    "14597": {
+      "name": "Rylee Ruwette",
+      "url": "https://ilha.hockeysyte.com/player/14597",
+      "stats": {}
+    },
+    "14598": {
+      "name": "Safira Giveen",
+      "url": "https://ilha.hockeysyte.com/player/14598",
+      "stats": {}
+    },
+    "14599": {
+      "name": "Harrison Kelleher",
+      "url": "https://ilha.hockeysyte.com/player/14599",
+      "stats": {}
+    },
+    "14600": {
+      "name": "Thomas Halsted",
+      "url": "https://ilha.hockeysyte.com/player/14600",
+      "stats": {}
+    },
+    "14601": {
+      "name": "Beau Mumford",
+      "url": "https://ilha.hockeysyte.com/player/14601",
+      "stats": {}
+    },
+    "14602": {
+      "name": "Jasiah Mumford",
+      "url": "https://ilha.hockeysyte.com/player/14602",
+      "stats": {}
+    }
+  }
 }

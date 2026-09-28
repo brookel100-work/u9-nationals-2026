@@ -69,3 +69,9 @@ Upload/replace the repository with this V22 pack and make sure GitHub Actions ar
 - The automatic sync now also opens the Game 23 article, giving it another official source from which to detect the QLD v SA result.
 - No player statistics are fabricated: detailed stats remain linked to HockeySyte until the automatic parser can verify those fields.
 - PWA cache bumped to V23.
+
+## V24 HockeySyte data pipeline
+- GitHub Actions opens the rendered HockeySyte season, SA team, Game 23 and all 11 SA player profile pages with Chromium every 5 minutes.
+- Standings, results, SA game scores and player/goalie statistics are refreshed independently; a failure in one section keeps that section's last-known-good values instead of blocking the whole update.
+- `diagnostics/` captures rendered text, tables, screenshots and a parse summary during each workflow run. GitHub uploads these as a short-lived `hockeysyte-sync-diagnostics` artifact so layout/access failures can be diagnosed without phone screenshots.
+- The bundled snapshot includes the verified 28 Sep QLD 18–0 SA result and TJ's verified Game 1 goalie line. The first successful GitHub workflow run will replace/extend the snapshot from HockeySyte.
