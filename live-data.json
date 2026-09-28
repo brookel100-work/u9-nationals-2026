@@ -1,0 +1,18 @@
+{
+  "source": "HockeySyte",
+  "sourceLabel": "HockeySyte snapshot · 27 Sep",
+  "updated": "2026-09-27T00:00:00+10:00",
+  "note": "Last-known-good HockeySyte data. Automatic sync refreshes this file when verified data is available.",
+  "standings": [
+    {"team":"QLD","name":"Queensland","gp":1,"w":1,"l":0,"pts":2,"gf":20,"ga":0},
+    {"team":"VIC","name":"Victoria","gp":1,"w":1,"l":0,"pts":2,"gf":20,"ga":2},
+    {"team":"SA","name":"South Australia","gp":0,"w":0,"l":0,"pts":0,"gf":0,"ga":0},
+    {"team":"NSW","name":"New South Wales","gp":1,"w":0,"l":1,"pts":0,"gf":2,"ga":20},
+    {"team":"TAS","name":"Tasmania","gp":1,"w":0,"l":1,"pts":0,"gf":0,"ga":20}
+  ],
+  "results": [
+    {"home":"QLD","away":"TAS","homeScore":20,"awayScore":0},
+    {"home":"VIC","away":"NSW","homeScore":20,"awayScore":2}
+  ],
+  "scheduleResults": {}
+}

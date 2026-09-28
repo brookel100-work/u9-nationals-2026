@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "27 September 2026 · V21",
+    lastUpdated: "28 September 2026 · V22",
     hockeySyteTeamUrl: "https://ilha.hockeysyte.com/team/993",
     facebookCanonicalUrl: "https://www.facebook.com/profile.php?id=61592878025737",
     facebookShareUrl: "https://www.facebook.com/profile.php?id=61592878025737",
@@ -71,7 +71,7 @@ window.APP_DATA = {
     source: "HockeySyte",
     sourceLabel: "HockeySyte snapshot · 27 Sep",
     updated: "27 Sep 2026",
-    note: "Current U9 standings and results captured from HockeySyte. Automatic feed connection is being prepared.",
+    note: "Current U9 standings and results captured from HockeySyte. Automatic HockeySyte sync enabled; last-known-good data remains visible if a refresh fails.",
     standings: [
       { team: "QLD", name: "Queensland", gp: 1, w: 1, l: 0, pts: 2, gf: 20, ga: 0 },
       { team: "VIC", name: "Victoria", gp: 1, w: 1, l: 0, pts: 2, gf: 20, ga: 2 },

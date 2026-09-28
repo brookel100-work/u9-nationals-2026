@@ -45,5 +45,14 @@ const pages={home,schedule,team,rules,info};
 function wireAnnouncements(){document.querySelectorAll('.share-announcement').forEach(btn=>btn.addEventListener('click',async()=>{const a=(d.announcements||[]).filter(x=>x.active)[Number(btn.dataset.announcement)];if(!a)return;const actionText=(a.actions||[]).map(x=>`${x.label}: ${x.url}`).join('\n');const body=(a.sections||[]).length?a.sections.map(s=>`${s.icon||''} ${s.heading}\n${s.text}`).join('\n\n'):(a.message||'');const text=`${a.priority==='important'?'IMPORTANT: ':''}${a.title}\n\n${body}${actionText?`\n\n${actionText}`:''}\n\n— ${a.author||'Team Manager'}`;try{if(navigator.share){await navigator.share({title:a.title,text});return}await navigator.clipboard.writeText(text);window.open(d.meta.messengerGroupUrl,'_blank','noopener');btn.querySelector('span').textContent='Copied — paste in Messenger'}catch(e){try{await navigator.clipboard.writeText(text)}catch(_){}window.open(d.meta.messengerGroupUrl,'_blank','noopener')}}))}
 function render(page='home'){app.innerHTML=pages[page]();nav.forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.querySelectorAll('[data-go]').forEach(el=>el.onclick=()=>render(el.dataset.go));wireAnnouncements();window.scrollTo({top:0,behavior:'instant'})}
 nav.forEach(b=>b.addEventListener('click',()=>render(b.dataset.page)));
-render('home');
-if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js?v=21').catch(()=>{});}
+async function loadLiveData(){
+  try{
+    const r=await fetch('./live-data.json?ts='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error('live-data '+r.status);
+    const live=await r.json();
+    if(Array.isArray(live.standings)&&live.standings.length) d.liveSnapshot={...d.liveSnapshot,...live};
+    if(live.scheduleResults){d.schedule.forEach(g=>{const x=live.scheduleResults[String(g.id)];if(x&&Number.isFinite(x.homeScore)&&Number.isFinite(x.awayScore)){g.homeScore=x.homeScore;g.awayScore=x.awayScore;}})}
+  }catch(e){console.warn('Using last-known-good Nationals data',e)}
+}
+(async()=>{await loadLiveData();render('home')})();
+if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js?v=22').catch(()=>{});}

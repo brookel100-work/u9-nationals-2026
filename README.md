@@ -48,3 +48,14 @@ Upload/replace the full contents of this folder in the GitHub Pages repository, 
 - Updated the Home announcement for Nationals being underway and the Monday 9:15am U9 opener / 8:15am arrival.
 - Retained the current NTC venue/game-day Rules & Regs from V19, including 3-minute warm-up, SA polos, team entry/holding area, bag storage, white stick tape and red-line handshakes.
 - No roster, jersey-number, draw or artwork changes in this build.
+
+## V22 — automatic HockeySyte sync — 28 September 2026
+- Added a GitHub Actions sync that runs every 5 minutes and can also be run manually.
+- Uses a headless Chromium browser on GitHub's runner to read the public HockeySyte Nationals pages, so the phone/browser does not need cross-origin access to HockeySyte.
+- Updates `live-data.json` only when all five U9 standings teams can be parsed safely; otherwise the app keeps its last-known-good data.
+- Home and Schedule now load `live-data.json` on launch and merge official scores/standings into the existing app.
+- SA round-robin results are mapped into the existing schedule so Latest SA Result, record, GF/GA and completed-game cards update automatically.
+- No API key is embedded in the public site.
+
+### One-time GitHub step
+Upload/replace the repository with this V22 pack and make sure GitHub Actions are enabled for the repository. Then open **Actions → Sync HockeySyte Nationals data → Run workflow** once to verify the first live refresh. After that, the scheduled job runs automatically.
