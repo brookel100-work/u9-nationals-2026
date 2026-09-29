@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "28 September 2026 · V24",
+    lastUpdated: "30 September 2026 · V26 (manual snapshot)",
     hockeySyteTeamUrl: "https://ilha.hockeysyte.com/team/993",
     hockeySyteGame23Url: "https://ilha.hockeysyte.com/news/343",
     hockeySyteHomeUrl: "https://ilha.hockeysyte.com/",
@@ -64,33 +64,106 @@ window.APP_DATA = {
     { dateLabel: "Sat 12 Sep", timeLabel: "1:15–2:30pm" }
   ],
   schedule: [
-    { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/news/343", homeScore: null, awayScore: null },
-    { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", home: "SA", away: "NSW", venue: "Skate Paradise", homeScore: null, awayScore: null },
-    { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", homeScore: null, awayScore: null },
-    { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", homeScore: null, awayScore: null }
+    { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/game/3320", youtubeUrl: "https://www.youtube.com/watch?v=LLlfKqguAqE", homeScore: 18, awayScore: 0 },,
+    { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", home: "SA", away: "NSW", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/game/3339", youtubeUrl: "https://www.youtube.com/watch?v=CXChqyG9ROs", homeScore: 5, awayScore: 9 },,
+    { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/pregame/3362", youtubeUrl: "https://www.youtube.com/watch?v=HGFi3Kf4M8s", homeScore: null, awayScore: null },,
+    { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/pregame/3405", youtubeUrl: "https://www.youtube.com/watch?v=0TjC4LPwzXk", homeScore: null, awayScore: null },
   ],
   liveSnapshot: {
-    source: "HockeySyte",
-    sourceLabel: "HockeySyte snapshot · 27 Sep",
-    updated: "27 Sep 2026",
-    note: "Current U9 standings and results captured from HockeySyte. Automatic HockeySyte sync enabled; last-known-good data remains visible if a refresh fails.",
-    standings: [
-      { team: "QLD", name: "Queensland", gp: 1, w: 1, l: 0, pts: 2, gf: 20, ga: 0 },
-      { team: "VIC", name: "Victoria", gp: 1, w: 1, l: 0, pts: 2, gf: 20, ga: 2 },
-      { team: "SA", name: "South Australia", gp: 0, w: 0, l: 0, pts: 0, gf: 0, ga: 0 },
-      { team: "NSW", name: "New South Wales", gp: 1, w: 0, l: 1, pts: 0, gf: 2, ga: 20 },
-      { team: "TAS", name: "Tasmania", gp: 1, w: 0, l: 1, pts: 0, gf: 0, ga: 20 }
+    "source": "HockeySyte",
+    "sourceLabel": "Manual snapshot · 29 Sep",
+    "updated": "29 Sep 2026",
+    "note": "Manually entered from HockeySyte screenshots supplied 30 Sep. Not live; update at end of each day.",
+    "standings": [
+      {
+        "team": "QLD",
+        "name": "Queensland",
+        "gp": 2,
+        "w": 2,
+        "l": 0,
+        "pts": 4,
+        "gf": 38,
+        "ga": 0
+      },
+      {
+        "team": "VIC",
+        "name": "Victoria",
+        "gp": 2,
+        "w": 2,
+        "l": 0,
+        "pts": 4,
+        "gf": 40,
+        "ga": 2
+      },
+      {
+        "team": "NSW",
+        "name": "New South Wales",
+        "gp": 2,
+        "w": 1,
+        "l": 1,
+        "pts": 2,
+        "gf": 11,
+        "ga": 25
+      },
+      {
+        "team": "SA",
+        "name": "South Australia",
+        "gp": 2,
+        "w": 0,
+        "l": 2,
+        "pts": 0,
+        "gf": 5,
+        "ga": 27
+      },
+      {
+        "team": "TAS",
+        "name": "Tasmania",
+        "gp": 2,
+        "w": 0,
+        "l": 2,
+        "pts": 0,
+        "gf": 0,
+        "ga": 40
+      }
     ],
-    results: [
-      { home: "QLD", away: "TAS", homeScore: 20, awayScore: 0 },
-      { home: "VIC", away: "NSW", homeScore: 20, awayScore: 2 }
+    "results": [
+      {
+        "home": "NSW",
+        "away": "VIC",
+        "homeScore": 2,
+        "awayScore": 20
+      },
+      {
+        "home": "TAS",
+        "away": "QLD",
+        "homeScore": 0,
+        "awayScore": 20
+      },
+      {
+        "home": "QLD",
+        "away": "SA",
+        "homeScore": 18,
+        "awayScore": 0
+      },
+      {
+        "home": "VIC",
+        "away": "TAS",
+        "homeScore": 20,
+        "awayScore": 0
+      },
+      {
+        "home": "SA",
+        "away": "NSW",
+        "homeScore": 5,
+        "awayScore": 9
+      }
     ]
   },
   finals: [
-    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "CONDITIONAL · SA plays if finishing 4th or 5th", confirmed: false },
-    { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "CONDITIONAL · SA plays if finishing 1st or 2nd", confirmed: false },
-    { id: 125, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "11:10", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs Winner Game 113", note: "CONDITIONAL · SA may play depending on ladder position / Game 113", confirmed: false },
-    { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "CONDITIONAL · SA may play depending on earlier finals results", confirmed: false },
-    { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "CONDITIONAL · U9 Grand Final if SA qualifies", confirmed: false }
+    { id: 113, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "16:45", timeLabel: "4:45pm", arrivalLabel: "3:45pm", match: "4th vs 5th", note: "CONDITIONAL · SA plays if finishing 4th or 5th", confirmed: false, gameUrl: "https://ilha.hockeysyte.com/pregame/3410" },
+    { id: 124, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "10:20", timeLabel: "10:20am", arrivalLabel: "9:20am", match: "1st vs 2nd", note: "CONDITIONAL · SA plays if finishing 1st or 2nd", confirmed: false, gameUrl: "https://ilha.hockeysyte.com/pregame/3421" },
+    { id: 125, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "11:10", timeLabel: "11:10am", arrivalLabel: "10:10am", match: "3rd vs Winner Game 113", note: "CONDITIONAL · SA may play depending on ladder position / Game 113", confirmed: false, gameUrl: "https://ilha.hockeysyte.com/pregame/3422" },
+    { id: 131, date: "2026-10-03", dateLabel: "Sat 3 Oct", time: "16:10", timeLabel: "4:10pm", arrivalLabel: "3:10pm", match: "Loser Game 124 vs Winner Game 125", note: "CONDITIONAL · SA may play depending on earlier finals results", confirmed: false, gameUrl: "https://ilha.hockeysyte.com/pregame/3428" },
+    { id: 138, date: "2026-10-04", dateLabel: "Sun 4 Oct", time: "08:00", timeLabel: "8:00am", arrivalLabel: "7:00am", match: "Winner Game 124 vs Winner Game 131", note: "CONDITIONAL · U9 Grand Final if SA qualifies", confirmed: false, gameUrl: "https://ilha.hockeysyte.com/pregame/3435" }
   ],
 };
