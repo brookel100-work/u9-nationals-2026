@@ -1,9 +1,5 @@
-# SA U9 Nationals V26 — MANUAL SNAPSHOT
+# SA U9 Nationals V27
 
-Updated from Brooke’s HockeySyte screenshots dated 29 September 2026. Auto-sync GitHub workflows have been disabled deliberately so they cannot overwrite manually verified results.
+Home: official embedded U9 competition page below Quick Access. Schedule & Results: embedded SA team page; removed duplicated manual standings and U9 round-robin results. Compact TJ goalie snapshot and official U9 goalie statistics link. Game cards and all existing official game/video links preserved. Manual SA results remain a snapshot, not a live feed.
 
-Update `app-data.js` schedule and `live-data.json` standings, results, goalie/player stats at end of each day. Keep both in agreement. Do not publish unverified skater numbers.
-
-Game URLs and YouTube URLs are stored in `app-data.js`. Upcoming game YouTube links may not yet contain a video.
-
-To publish: upload ZIP contents to repository root and commit; refresh the installed PWA after GitHub Pages updates.
+Upload the contents of this ZIP to the root of your existing GitHub Pages repository, replacing matching files. Browser may need a reload to activate the new service worker.

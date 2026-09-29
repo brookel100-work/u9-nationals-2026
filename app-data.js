@@ -7,7 +7,7 @@ window.APP_DATA = {
     nationalsStart: "2026-09-27T06:00:00+10:00",
     nationalsEnd: "2026-10-04T17:00:00+10:00",
     scheduleVersion: "v2.8",
-    lastUpdated: "30 September 2026 · V26 (manual snapshot)",
+    lastUpdated: "30 September 2026 · V27 (official embeds + manual SA snapshot)",
     hockeySyteTeamUrl: "https://ilha.hockeysyte.com/team/993",
     hockeySyteGame23Url: "https://ilha.hockeysyte.com/news/343",
     hockeySyteHomeUrl: "https://ilha.hockeysyte.com/",
