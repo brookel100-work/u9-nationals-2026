@@ -66,7 +66,7 @@ window.APP_DATA = {
   schedule: [
     { id: 23, date: "2026-09-28", dateLabel: "Mon 28 Sep", time: "09:15", timeLabel: "9:15am", arrivalLabel: "8:15am", home: "QLD", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/game/3320", youtubeUrl: "https://www.youtube.com/watch?v=LLlfKqguAqE", homeScore: 18, awayScore: 0 },,
     { id: 42, date: "2026-09-29", dateLabel: "Tue 29 Sep", time: "08:30", timeLabel: "8:30am", arrivalLabel: "7:30am", home: "SA", away: "NSW", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/game/3339", youtubeUrl: "https://www.youtube.com/watch?v=CXChqyG9ROs", homeScore: 5, awayScore: 9 },,
-    { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/pregame/3362", youtubeUrl: "https://www.youtube.com/watch?v=HGFi3Kf4M8s", homeScore: null, awayScore: null },,
+    { id: 65, date: "2026-09-30", dateLabel: "Wed 30 Sep", time: "10:45", timeLabel: "10:45am", arrivalLabel: "9:45am", home: "TAS", away: "SA", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/pregame/3362", youtubeUrl: "https://www.youtube.com/watch?v=HGFi3Kf4M8s", homeScore: 7, awayScore: 5 },
     { id: 108, date: "2026-10-02", dateLabel: "Fri 2 Oct", time: "13:00", timeLabel: "1:00pm", arrivalLabel: "12:00pm", home: "SA", away: "VIC", venue: "Skate Paradise", gameUrl: "https://ilha.hockeysyte.com/pregame/3405", youtubeUrl: "https://www.youtube.com/watch?v=0TjC4LPwzXk", homeScore: null, awayScore: null },
   ],
   liveSnapshot: {

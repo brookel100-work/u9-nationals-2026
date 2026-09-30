@@ -1,60 +1,9 @@
 {
   "source": "HockeySyte manual snapshot",
-  "sourceLabel": "Manual snapshot \u00b7 29 Sep",
-  "updated": "2026-09-29T23:00:00+10:00",
-  "note": "Manually entered from HockeySyte screenshots supplied 30 Sep. Not live; update at end of each day.",
-  "standings": [
-    {
-      "team": "QLD",
-      "name": "Queensland",
-      "gp": 2,
-      "w": 2,
-      "l": 0,
-      "pts": 4,
-      "gf": 38,
-      "ga": 0
-    },
-    {
-      "team": "VIC",
-      "name": "Victoria",
-      "gp": 2,
-      "w": 2,
-      "l": 0,
-      "pts": 4,
-      "gf": 40,
-      "ga": 2
-    },
-    {
-      "team": "NSW",
-      "name": "New South Wales",
-      "gp": 2,
-      "w": 1,
-      "l": 1,
-      "pts": 2,
-      "gf": 11,
-      "ga": 25
-    },
-    {
-      "team": "SA",
-      "name": "South Australia",
-      "gp": 2,
-      "w": 0,
-      "l": 2,
-      "pts": 0,
-      "gf": 5,
-      "ga": 27
-    },
-    {
-      "team": "TAS",
-      "name": "Tasmania",
-      "gp": 2,
-      "w": 0,
-      "l": 2,
-      "pts": 0,
-      "gf": 0,
-      "ga": 40
-    }
-  ],
+  "sourceLabel": "Manual SA game results \u00b7 through 30 Sep",
+  "updated": "2026-09-30T13:00:00+10:00",
+  "note": "Manual results through 30 Sep (TAS 7\u20135 SA). For current standings and goalie statistics, see embedded HockeySyte.",
+  "standings": [],
   "results": [
     {
       "home": "NSW",
@@ -85,6 +34,12 @@
       "away": "NSW",
       "homeScore": 5,
       "awayScore": 9
+    },
+    {
+      "home": "TAS",
+      "away": "SA",
+      "homeScore": 7,
+      "awayScore": 5
     }
   ],
   "scheduleResults": {
@@ -95,6 +50,10 @@
     "42": {
       "homeScore": 5,
       "awayScore": 9
+    },
+    "65": {
+      "homeScore": 7,
+      "awayScore": 5
     }
   },
   "playerStats": {
