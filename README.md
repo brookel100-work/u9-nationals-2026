@@ -1,3 +1,5 @@
+V36 hotfix: fixed invalid app-data JavaScript that could prevent Home from rendering; aligned cache-busting to V36.
+
 V28 — manual update through 30 September 2026.
 
 Home: embedded official U9 competition page below Quick Access.

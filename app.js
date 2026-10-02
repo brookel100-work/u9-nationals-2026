@@ -62,4 +62,4 @@ async function loadLiveData(){
 // Render immediately so Home never waits on the network/live-data request.
 render('home');
 (async()=>{await loadLiveData();const active=document.querySelector('.nav-item.active')?.dataset.page||'home';render(active)})();
-if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js?v=34').catch(()=>{});}
+if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js?v=36').catch(()=>{});}
