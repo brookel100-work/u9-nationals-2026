@@ -1,0 +1,41 @@
+name: Sync HockeySyte Nationals data
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hockeysyte-sync
+  cancel-in-progress: true
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.55.0
+      - run: playwright install --with-deps chromium
+      - name: Fetch rendered HockeySyte data
+        run: python scripts/sync_hockeysyte.py
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hockeysyte-sync-diagnostics
+          path: diagnostics/
+          retention-days: 3
+      - name: Commit changed live data
+        run: |
+          if git diff --quiet -- live-data.json; then
+            echo "No live-data change"
+            exit 0
+          fi
+          git config user.name "SA U9 HockeySyte Sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add live-data.json
+          git commit -m "Auto-update Nationals HockeySyte data"
+          git push

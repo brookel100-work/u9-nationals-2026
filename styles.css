@@ -82,3 +82,13 @@
 
 /* V32 — native auto-synced photo collage (no Google file-browser UI) */
 .native-photo-wall{columns:2;column-gap:7px;margin:4px 0 18px}.native-photo{display:block;break-inside:avoid;margin:0 0 7px;border-radius:13px;overflow:hidden;background:#102746;box-shadow:0 5px 16px rgba(0,0,0,.28);transform:translateZ(0)}.native-photo:nth-child(5n+2){transform:rotate(.7deg)}.native-photo:nth-child(6n+3){transform:rotate(-.55deg)}.native-photo img{display:block;width:100%;height:auto;min-height:110px;object-fit:cover;transition:transform .2s ease}.native-photo:active img{transform:scale(.985)}.photo-sync-wait{padding:36px 20px;text-align:center;border:1px dashed rgba(255,255,255,.18);border-radius:18px;background:linear-gradient(135deg,rgba(16,39,70,.9),rgba(7,20,38,.96))}.photo-sync-wait>div{font-size:38px}.photo-sync-wait h3{margin:8px 0 4px}.photo-sync-wait p{margin:0;color:var(--muted);font-size:11px}@media(min-width:700px){.native-photo-wall{columns:3}}
+
+/* V34 — six-item mobile nav + iPhone safe-area breathing room */
+body{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+main{padding-bottom:calc(42px + env(safe-area-inset-bottom))}
+.bottom-nav{grid-template-columns:repeat(6,minmax(0,1fr));height:calc(82px + env(safe-area-inset-bottom));padding:5px 3px env(safe-area-inset-bottom);align-items:stretch}
+.bottom-nav .nav-item{min-width:0;padding:4px 1px 6px;gap:3px;line-height:1.05}
+.bottom-nav .nav-item span{font-size:20px;line-height:1}
+.bottom-nav .nav-item b{font-size:9px;white-space:nowrap}
+.bottom-nav .nav-item small{font-size:7px;line-height:1.05;white-space:nowrap}
+@media(max-width:380px){.bottom-nav .nav-item span{font-size:18px}.bottom-nav .nav-item b{font-size:8px}.bottom-nav .nav-item small{font-size:6.5px}}
