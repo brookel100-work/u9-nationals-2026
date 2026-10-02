@@ -6,3 +6,7 @@ Team: individual player profile links only; no manual stat lines.
 TAS 7–5 SA has been added. The official TAS game link is the supplied pregame URL and may redirect after publication.
 The embedded goalie view opens the official U9 season page because a verified direct goalie-tab URL was not supplied.
 Automatic sync remains disabled.
+
+
+## V30 Photos
+Adds a Photos tab linked to the shared SA U9 Nationals Google Drive folder, with an embedded grid that reflects folder contents and a direct folder button for family uploads (subject to Google Drive sharing permissions).
