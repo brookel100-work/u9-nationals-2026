@@ -1,4 +1,4 @@
-V36 hotfix: fixed invalid app-data JavaScript that could prevent Home from rendering; aligned cache-busting to V36.
+V37 hotfix: fixed invalid app-data JavaScript that could prevent Home from rendering; aligned cache-busting to V37.
 
 V28 — manual update through 30 September 2026.
 
